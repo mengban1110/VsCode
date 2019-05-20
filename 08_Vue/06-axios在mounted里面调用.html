@@ -1,0 +1,51 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>01-vue对象的生命周期</title>
+    <script src="js/vue.js"></script>
+    <script src="./js/axios.min.js"></script>
+    <script>
+            window.onload = function () { 
+                    var vm = new Vue({
+                    el:'.box',
+                    data:{
+                        dataList:[]
+                    },
+                    mounted:function () {
+                        axios({
+                            url:'http://t.weather.sojson.com/api/weather/city/101161401',
+                            method:'get'
+                        })
+                        // 2. 将 function ()删掉 替换成 =>
+                        .then( response => {
+                            // 1.axios resposne响应对象 自带了data属性
+                            console.log(response.data.data.forecast);
+
+                            this.dataList = response.data.data.forecast;
+        
+                        })
+                        .catch(function (error) {
+                            alert('网不行!')
+                        })
+                    },
+                })
+              
+                
+
+            }
+        </script>
+    </head>
+    <body>
+    
+        <div class="box">
+    
+            <div v-for="item in dataList">{{item}}</div>
+    
+        </div>
+        
+    </body>
+    </html>

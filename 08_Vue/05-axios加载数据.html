@@ -1,0 +1,66 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>01-vue对象的生命周期</title>
+    <script src="js/vue.js"></script>
+    <script src="./js/axios.min.js"></script>
+    <script>
+            window.onload = function () {
+                
+                var vm = new Vue({
+                    el:'.box',
+                    methods: {
+                        fnSendRequest:function (){
+                            // vue中的请求 axios.js
+                            axios({
+                                url:'http://t.weather.sojson.com/api/weather/city/101010100',
+                                method:'get'
+                            })
+                            .then(function (response) {
+                                console.log(response)
+                                console.log(response.data)
+                            })
+                            .catch(function () {
+                                alert('网不行!')
+                            })
+
+                            // 简写
+                            // axios.get('http://t.weather.sojson.com/api/weather/city/101010100')
+                            // axios.get('url',{ params:{key:value}})
+                            // .then(function (response) {
+                            //     console.log(response)
+                            //     console.log(response.data)
+                            // })
+                            // .catch(function () {
+                            //     alert('网不行!')
+                            // })
+
+                            // $.ajax({
+                            //     url:'',
+                            //     type:'get',
+                            //     dataType:'json',
+                            //     sucess:,
+                            //     error
+                            // })
+                            // .done
+                        }
+                    },
+                    
+                })
+            }
+        </script>
+    </head>
+    <body>
+    
+        <div class="box">
+    
+            <button @click='fnSendRequest'>获取天气预报的数据</button>
+    
+        </div>
+        
+    </body>
+    </html>

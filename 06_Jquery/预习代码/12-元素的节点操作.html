@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>04-元素的节点操作</title>
+    <style>
+        .box{
+            width: 400px;
+            height: 400px;
+            background: red;
+        }
+    </style>
+    <script src="js/jquery-1.12.4.min.js"></script>
+    <script>
+        $(function () {
+            var $div = $('.box');
+            // 面向的 jquery标签对象  DOM操作 document object model
+            // 1.创建节点 标签对象
+            // var $new = $('<p>');//空标签
+            var $new = $('<p>段落标签段落标签段落标签</p>');
+
+            // 2.插入节点
+                // 2.1 内部 父子关系
+                    // 2.1.1 后面
+                    // $div.append($new);
+                    // $new.appendTo($div);
+                    // $div.append($new);
+
+                    // 2.1.2 前面
+                    // $div.prepend($new);
+                    // $new.prependTo($div);
+                    // $div.prepend($new)
+
+
+                // 2.2 外部 兄弟关系 after before
+                    // 2.2.1 后面
+                    // $div.after($new);
+                    // $new.insertAfter($div);
+
+
+                    // 2.2.2 前面
+                    // $div.before($new);
+                    // $new.insertBefore($div);
+
+            // 3.删除节点
+            // $div.remove();
+           
+            
+        })
+    </script>
+   
+</head>
+<body style="background: lightgray">
+    <div class="box">
+            <img src="images/gaoshi.png" alt="" width="200px" height="200px">
+    </div>
+    
+</body>
+</html>

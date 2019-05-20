@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>16-函数和变量的预解析</title>
+
+    <script>
+    
+        window.onload = function () {
+
+            // 函数可以 先调用 后定义 预解析!
+            
+            // 2.再执行函数
+            // fnTest();
+            
+            // 1.先定义函数
+            function fnTest(){
+                alert('函数的预解析!');
+            }
+
+
+            // 变量 预解析; 只会防止报错 ; 赋值 undefined的类型
+            alert(iNum);
+            var iNum = 100;
+            
+          
+        }
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

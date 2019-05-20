@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>14-动画</title>
+    <style>
+        .red {
+            width: 10px;
+            height: 200px;
+            background: red;
+        }
+        .green {
+            width: 10px;
+            height: 200px;
+            background:green;
+        }
+    
+    </style>
+    <script src="./js/jquery-1.12.4.min.js"></script>
+    <script src="./js/jquery.color.js"></script>
+    <script>
+    
+        $(function () {
+            
+            // jquery 动画 针对的  属性 px
+            // 颜色动画 , 第三方插件
+
+            // $('.red').css({'width':1000});
+            // 1.可动画的属性 
+            // 2. 动画时长 毫秒
+            // 3.动画的样式 linear swing
+            // 4. 监听动画结束的时机
+            $('.red').animate(
+                {'width':1000,
+                  'background-color':'blue'
+                },
+                2000,
+                'linear',
+                function () {
+                    console.log('动画结束')
+                 
+                }
+                
+            )
+
+            // $('.green').animate(
+            //     {'width':1000},
+            //     2000,
+            //     'swing'
+            // )
+        })
+    
+    </script>
+</head>
+<body>
+    <div class="red"></div>
+    <div class="green"></div>
+    
+</body>
+</html>

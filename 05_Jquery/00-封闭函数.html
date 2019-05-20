@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>01-封闭函数</title>
+    <script src="js/jquery-1.12.4.min.js"></script>
+    <script>
+        window.onload = function () {
+            
+          
+            // 1.封闭函数 
+            // (函数)();
+            // ~函数();
+            // !函数();
+
+            // 1.匿名函数 不能单独定义, 借用封闭函数 直接运行
+
+            // 页面一启动, 调用功能
+            (function  () {
+                // alert('已启动就弹提示框')
+            })();
+
+            ~function  () {
+                // alert('已启动就弹提示框22222')
+            }();
+
+            !function  () {
+                // alert('已启动就弹提示框33333')
+            }();
+
+            // 2.封闭函数 避免 同名函数
+            function fnAlert(){
+                alert('老司机!!!')
+            }
+
+            // 函数 预解析 
+            fnAlert();
+
+            (function fnAlert(){
+                alert('小白')
+            })();
+         
+
+        
+        
+
+        }
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

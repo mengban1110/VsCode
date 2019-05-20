@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        window.onload = function () {
+
+            // ES5.0
+            var oOne = {
+                name:'张三',
+                age:'18',
+                fnAlert:function (){
+                    console.log(123242324)
+                }
+            }
+
+            var oTwo = new Object();
+            oTwo.name = "李四"
+
+            
+            // ES6.0 对象的简写 变量的名字 要和 属性的名字一致
+            var name = "老万g"
+            var age = 16
+            var fnTest = function () {
+                console.log('写作业!')
+            }
+
+            var person = {
+                name,
+                age,
+                fnTest
+            }
+
+            alert(person.name)
+            person.fnTest()
+           
+
+         
+
+            
+        }
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

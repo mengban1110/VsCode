@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>04-元素的节点操作</title>
+    <style>
+        .box{
+            width: 400px;
+            height: 400px;
+            background: red;
+        }
+    </style>
+    <script src="js/jquery-1.12.4.min.js"></script>
+    <script>
+        $(function () {
+            // 操作节点  jquery的标签对象
+            // 1.创建节点  
+            var $p = $('<p>');
+            var $p = $('<p>新增的标签</p>');
+            
+            // 2.插入节点 增加
+                // 1.父子
+                // 追加
+                // $('div').append($p);
+                // $p.appendTo($('div'));
+
+                // 前面
+                // $('div').prepend($p);
+                // $p.prependTo($('div'))
+
+
+                // 2.平级
+                // $('div').after($p);
+                // $p.insertAfter($('div'));
+
+                // $('div').before($p);
+                // $p.insertBefore($('div'));
+
+            // 3.删除节点 remove
+            // $('div').remove();
+
+            
+        })
+    </script>
+</head>
+<body style="background: lightgray">
+    <div class="box">
+            <img src="images/gaoshi.png" alt="" width="200px" height="200px">
+    </div>
+    
+</body>
+</html>

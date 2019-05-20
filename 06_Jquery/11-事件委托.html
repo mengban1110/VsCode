@@ -1,0 +1,46 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title></title>
+    
+    <script src="js/jquery-1.12.4.min.js"></script>
+   <script>
+       $(function () {
+        //    事件委托---冒泡原理 :将子元素的事件 委托给父元素
+        //   1. 减少绑定次数, 提高cpu
+        //  2. 新增的元素 有同样的事件
+
+        // 委托的写法  delegate 
+        // 将li标签的点击事件  委托给 ul.list
+        $('.list').delegate('li','click',function () {
+            $(this).css('color','red');
+        })
+
+        // 绑定了 5个标签
+        // $('.list li').click(function () {
+        //     $(this).css('color','red');
+        // })
+
+         var $li = "<li>新增的内容</li>"
+         $('.list').html($li)
+
+          
+       })
+   </script>
+</head>
+<body>
+
+    <ul class="list">
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+        <li>5</li>
+    </ul>
+   
+</body>
+</html>

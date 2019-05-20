@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>06-属性问题</title>
+    <script src="./js/jquery-1.12.4.min.js"></script>
+    <script>
+        
+        // 1.自带的 class id style
+        // 2. 写在 style="color:red" <style></style>
+
+        $(document).ready(function () {
+            
+            // js  点语法
+            var oDiv = document.getElementById('one');
+            var sClass = oDiv.className;
+            var sClass = oDiv.id;
+            var sColor = oDiv.style.color;
+
+            // jquery:
+            // var sColor = $('div').css('color');
+            // var sColor = oDiv.style.color;
+
+            // var sClass  = $('div').prop('class')
+            // var sClass = oDiv.className;
+
+
+
+        })
+
+    
+    </script>
+</head>
+<body>
+
+    <div class="box" id="abc" style="color:red"></div>
+    
+</body>
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+  
+    <script src="js/vue.js"></script>
+    <script>
+        window.onload = function () {
+            
+            var vm = new Vue({
+                el:'#app',
+                data:{
+                    content:"A",
+                    gender:'男',
+                    likeList:[]
+                }
+               
+            })
+        }
+    </script>
+</head>
+<body>
+
+    <div id="app">
+       <!-- 只要看到 input ,select  首选 v-model -->
+
+        <!-- 多选 -->
+        <input type="checkbox" name="like" value="A" id="" v-model="likeList">A
+        <input type="checkbox" name="like" value="B" id="" v-model="likeList">B
+        <input type="checkbox" name="like" value="C" id="" v-model="likeList">C
+        <input type="checkbox" name="like" value="D" id="" v-model="likeList">D
+        <p>您的爱好是: {{likeList}}</p>
+
+
+        <!-- 单选 -->
+        <!-- <input type="radio" name="sex" id="" value="男" v-model="gender">男
+        <input type="radio" name="sex" id="" value="女" v-model="gender">女
+        <p>您的性别是: {{gender}}</p> -->
+
+        <!-- 下拉列表 -->
+        <!-- <select name="" id="" v-model = 'content'>
+            <option value="A">A</option>
+            <option value="B">B</option>
+            <option value="C">C</option>
+            <option value="D">D</option>
+        </select>
+        <p>英语答案是: {{content}}</p> -->
+
+        <!-- 输入框 -->
+        <!-- <input   type="text" v-model="content">
+        <p>{{content}}</p> -->
+    </div>
+    
+</body>
+</html>

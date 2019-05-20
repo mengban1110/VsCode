@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>07-事件的处理</title>
+    <script src="js/vue.js"></script>
+    <script>
+        window.onload = function () {
+            
+            
+            var vm = new Vue({
+                el:'.box',
+                methods: {
+                    fnSon:function (){
+                        alert('son');
+                      
+                    },
+                    fnFather:function (){
+                        alert('father')
+                    }
+                },
+            })
+           
+        }
+    </script>
+</head>
+<body>
+    <div class="box">
+        
+        <!-- 阻止默认提交事件 prevent @submit.prevent="" -->
+        <form  action="">
+            <input type="text" name="user">
+            <input @click.prevent.stop="" type="submit">
+        </form>
+
+
+
+        <!-- 事件传递问题  阻止事件冒泡 @click.stop-->
+      <div  @click="fnFather" class="father" style="background: red">
+          father
+          <div @click.stop="fnSon" class="son" style="background: green">son</div>
+          father
+      </div>
+
+
+    </div>
+    
+</body>
+</html>

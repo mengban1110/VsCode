@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>14-网页换肤</title>
+    
+    <script>
+        window.onload = function () {
+            
+            // 1.获取标签
+            var oRedBtn = document.getElementById('red'),
+                oGreenBtn = document.getElementById('green'),
+                oBody = document.getElementById('bg');
+
+            // 2.监听事件
+            oRedBtn.onclick = function () {
+                // 3.背景色 body的
+                oBody.style.backgroundColor = "red";
+            }
+            oGreenBtn.onclick = function () {
+                oBody.style.backgroundColor = "green";
+            }
+        }
+    
+    
+    </script>
+</head>
+<body id="bg">
+    <!-- button#red+button#green -->
+    <button id="red">红色的按钮</button>
+    <button id="green">绿色的按钮</button>
+    
+</body>
+</html>

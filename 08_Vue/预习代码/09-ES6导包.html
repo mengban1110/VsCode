@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <!-- <script src="js/my.js"></script> -->
+
+    <!-- 将 main.js 中 student对象 导入到当前文件 -->
+    <script>
+        // 1.main.js 导出 student
+        export default {student}
+
+        // 2.当前文件 导入
+        import student from 'js/main.js'
+
+
+     
+        // 3.二种
+        export {student}
+        import {student} from 'js/main.js'
+    
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

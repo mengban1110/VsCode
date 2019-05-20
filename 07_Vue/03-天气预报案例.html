@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>06-天气预报案例事件监听</title>
+    <script src="./js/jquery-1.12.4.min.js"></script>
+    <script src="./js/jquery.color.js"></script>
+    <!-- css -->
+    <style>
+        /* 背景颜色 */
+        .bodys{
+            background-color: rgb(red, green, blue);
+        }
+        /* 最外层div */
+        .box{
+            width: 900px;
+            height: 500px;
+            background-color: aquamarine;
+            margin: 50px auto;
+            /* 边框 */
+            border: 5px solid white;
+        }
+        /* 左侧 中间 右侧 */
+        .left,.center,.right{
+            width: 300px;
+            height: 500px;
+            float: left;
+            /* 白色 */
+            color: white;
+        }
+        /* 左侧div */
+        .left{
+            text-align: center;
+            /* 行高 */
+            line-height: 500px;
+            /* 大小 */
+            font-size: 100px;
+            font-weight: bold;
+        }
+        /* 中间div */
+         .box .center p {
+            font-size: 30px;
+            text-indent: 20px;
+        }
+        /* 右侧div */
+        .box .right div {
+            font-size: 30px;
+            width: 240px;
+            height: 80px;
+            border: 2px solid white;
+            margin: 30px;
+            line-height: 80px;
+            text-align: center;
+        }
+        /* 右侧div中的div的特殊样式(选中) */
+        .box .right .current{
+            border: 5px solid red;
+            color: red;
+            font-weight: bold;
+        }
+    </style>
+    <!-- js -->
+    <script>
+       $(function () {
+           
+        // 1. 获取标签
+        var $leftDiv = $('.left'),
+            $centerDiv = $('.center'),
+            $rightDiv = $('.right'),
+            $body = $('.bodys');
+
+        // 2. 加载 默认数据  ajax 发送请求 获取数据
+        function fnLoadData(cityId) {
+            $.ajax({
+                url:'http://t.weather.sojson.com/api/weather/city/'+cityId,
+                type:'get',
+                dataType:'json',
+            }) 
+            .done(function (response) {
+                // console.log(response)
+                // 左边的 城市栏
+                $leftDiv.html(response.cityInfo.parent);
+
+                // 中间 信息 显示
+                var date = new Date(response.time);
+                date = date.getFullYear() + '年' + date.getMonth() +'月' + date.getDate() +'日'
+
+                var sCenterContent =  '<p>日期:'+ date +'</p>'
+                                     + '<p>温度:'+ response.data.wendu+'</p>'
+                                     + '<p>湿度:' +response.data.shidu +'</p>'
+                                     + '<p>空气:' +response.data.quality + '</p>'
+                                     + '<p>PM10:' +response.data.pm10 +'</p>'
+                                     + '<p>PM25:' +response.data.pm25 +'</p>';
+                $centerDiv.html(sCenterContent);
+
+            })
+            .error(function () {
+                alert('网不行!')
+            })
+        }
+        
+
+        var aCityIds = ['101010100','101020100','101030100','101040100'];
+        fnLoadData(aCityIds[0]);
+
+        // 3. 监听点击事件 , 请求对应城市的 天气数据
+        $rightDiv.delegate('div','click',function () {
+            
+            // 1.改颜色 样式class
+            $(this).addClass('current').siblings().removeClass('current');
+
+            // 2. 发送对应城市的 请求 获取数据展示
+            fnLoadData(aCityIds[$(this).index()])
+        })
+
+        // 4. 背景随机色 js Math.random()  0-1 0-255
+        function fnAnimation() {
+            var redRandom = parseInt(Math.random()*255).toString(16);
+            var greenRandom = parseInt(Math.random()*255).toString(16); 
+            var blueRandom = parseInt(Math.random()*255).toString(16); 
+            var hexColor = '#' + redRandom + greenRandom + blueRandom;
+
+            $body.animate(
+                {'background-color':hexColor},
+                2000,
+                function () {
+                    fnAnimation();
+                }
+            )
+        }
+
+        fnAnimation();
+
+       })
+    </script>
+
+</head>
+<body class='bodys'>
+    <!-- 最外层div -->
+    <div class="box">
+        <!-- 三个div -->
+        <!-- 左侧 -->
+        <div class="left" style="background-color:red">
+            --
+        </div>
+        <!-- 中间 -->
+        <div class="center" style="background-color:green">
+            <!-- 6个p标签 -->
+            <p>日期: ----------</p>
+            <p>温度: --℃</p>
+            <p>湿度: --%</p>
+            <p>空气: --</p>
+            <p>PM10: --</p>
+            <p>PM25: --</p>
+        </div>
+        <!-- 右侧 -->
+        <div class="right" style="background-color:blue">
+            <div class="current">北京</div>
+            <div>上海</div>
+            <div>天津</div>
+            <div>重庆</div>
+        </div>
+    </div>
+
+    
+</body>
+</html>

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>19-优化今日头条</title>
+
+    <style>
+        /* 处理 一左  一右 的布局  浮动 float 
+        左浮动 left
+        右浮动 right
+        */
+
+        /* 1.最外侧 div 的大小 和上下边框 */
+        .box {
+            width: 285px;
+            height: 310px;
+
+            /* 上下边框 */
+            border-top: 1px solid red;
+            border-bottom: 1px solid red;
+        }
+
+        /* 2. 设置 标题div 的高度 */
+        .head {
+            /* height: 40px; */
+        }
+        
+        .head h1 {
+            /* 标题 自带加粗 字体, 上下间距 */
+            /* 字体大小 微软雅黑 颜色 */
+            font-size: 16px;
+            font-family: 'microsoft yahei';
+            color: #172c45;
+
+            /* 左浮动 */
+            float:left;
+            /* 因为 h1 标签自带了上下间距 干扰了 我们的布局 取消掉 */
+            margin:0;
+            line-height: 40px;
+        }
+        /* gengduo */
+        .head a {
+            /* 字体大小 微软雅黑 颜色 */
+            font-size: 12px;
+            font-family: 'microsoft yahei';
+            color:#172c45;
+
+            /* 去掉下划线 */
+            text-decoration: none;
+
+            /* 右边浮动 */
+            float: right;
+
+            /* margin: 14px 0px; */
+            line-height: 40px;
+        }
+
+        /* 设置段落 */
+        .box p {
+            /* 字体大小 微软雅黑 颜色737373  行高*/
+            font-size: 12px;
+            font-family: 'microsoft yahei';
+            color: #737373;
+            line-height: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+
+        <div class="head">
+            <h1>今日头条</h1>
+            <a href="#">更多&gt;&gt;</a>
+        </div>
+
+        <img src="./images/banner.jpg" alt="计算机图片">
+
+        <p>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;人工智能（Artificial Intelligence），英文缩写为AI。它是研究、开发用于模拟、延伸和扩展人的智能的理论、方法、技术及应用系统的一门新的技术科学。 人工智能是计算机科学的一个分支，它企图了解智能的实质，并生产出一种新的能以人类智能相似的方式做出反应的智能机器，该领域的研究包括机器人、语言识别、图像识别、自然语言处理和专家系统等.
+        </p>
+    </div>
+    
+</body>
+</html>

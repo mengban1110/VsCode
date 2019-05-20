@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>点击事件</title>
+    <script src="./js/jquery-1.12.4.min.js"></script>
+    <script>
+    
+        $(function () {
+            
+            // 1. 按钮 点击 改变按钮的背景色
+            var $btn = $('#btn');
+
+            // 2.监听点击事件
+            $btn.click(function () {
+                
+                // 修改 按钮的背景色 background-color
+                // $btn.css({'background-color':'red'});
+
+                // this 代表  操作的标签对象
+                $(this).css({'background-color':'red'});
+            })
+
+            // 3. 列表 点击每一行 让每一行变颜色
+            var $lis = $('.list li');//5个
+            
+            $lis.click(function () {
+                
+                // 改变字体颜色
+                // $lis.css({'color':'red'});
+                $(this).css({'color':'green'});
+
+                // 获取 点击的li标签的 下标
+                alert($(this).index());
+            })
+
+        })
+    
+    </script>
+</head>
+<body>
+    <ul class="list">
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+        <li>5</li>
+    </ul>
+
+    <button id="btn">点击按钮</button>
+
+    
+</body>
+</html>

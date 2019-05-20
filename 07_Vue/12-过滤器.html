@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>01-vue的基本使用</title>
+   
+    <script src="js/vue.js"></script>
+    <script>
+
+        window.onload = function () {
+
+            //   过滤器 筛选数据, 正则   变量 | 过滤器
+            // 1. 局部过滤器
+            // 2. 全局过滤器 Vue.filter('过滤器的名字',过滤的功能函数)
+            Vue.filter(
+                'moneyFilter',
+                function (money) {
+                   if (money > 2000) {
+                       return "土豪"
+                   } else {
+                       return "穷人!"
+                   } 
+                }
+            )
+
+            var vm = new Vue({
+                 el:'.box',
+                 data:{
+                     age:21,
+                     money:1000
+                 },
+                 filters:{
+                     ageFilter:function (ageOption){
+
+                        if (ageOption > 18) {
+                            return "看电影"
+                        } else {
+                            return "看小猪佩奇!"
+                        }
+                     }
+                 }
+            })
+            
+            var vmTwo = new Vue({
+                el:'.app',
+                data:{
+                    money:3000
+                }
+            })
+        }
+    </script>
+</head>
+<body>
+   <div class="box">
+        <p>{{ money | moneyFilter }}</p>
+        <p>{{ age | ageFilter }}</p>
+   </div>
+
+   <div class="app">
+    <p>{{ money | moneyFilter }}</p>
+   </div>
+    
+</body>
+</html>

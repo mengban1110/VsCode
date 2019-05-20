@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>05-js加载数组数据</title>
+    <style>
+        .ul_list {
+            width: 300px;
+            border:1px solid lightgray;
+            margin:0 auto;
+        }
+
+        .ul_list li {
+            height: 59px;
+            border-bottom: 1px dotted lightgray;
+            line-height: 59px;
+        }
+    
+    </style>
+
+    <script>
+        window.onload = function () {
+            
+            // 1.标签
+            var oList = document.getElementById('list');
+
+            // 2.拼接 数组的里面的电影
+            var aMoiveList = ['流浪地球','飞驰人生','疯狂外星人','新喜剧之王2','ABC']
+
+            var sContent = ""
+            for(var i = 0; i < aMoiveList.length; i++){
+                // 取出电影的名字
+                var sName = aMoiveList[i];
+
+                sContent += '<li><a href="#">' + sName + '</a></li>';
+
+            }
+
+            // 3.赋值
+            oList.innerHTML = sContent;
+
+
+        }
+    
+    </script>
+</head>
+<body>
+    <ul id="list" class="ul_list">
+        <!-- <li></li>
+        将来的数据 由服务器 js 解析数组
+        -->
+       
+       
+    </ul>
+    
+</body>
+</html>

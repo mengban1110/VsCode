@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>05-相对定位</title>
+    <!-- 定位 布局; top left bottom right
+        文档流 标准流:
+                标准 标签 两类
+                div ,p ,h1-h6 : 排成一列
+                a span,      排成一行
+                按照标准标签的布局文档 称之为标准流文档流   
+
+        相对定位 relative  参照物自己;占位置 非常少
+        绝对定位 absolute  参照物父元素(父元素需要设置定位); 脱离文档流; 不占位置
+        固定定位 fixed
+        无定位  static
+    
+    -->
+    <style>
+            .box{
+                width: 500px;
+                height: 500px;
+                background-color:red;
+                /* margin-top: 200px;  */
+                margin: 0 auto; 
+
+                /* 父元素设置定位 */
+                position: relative;
+                /* position: absolute; */
+
+                overflow: auto;
+            }
+            .box2{
+                width: 200px;
+                height: 200px;
+                background-color:green;
+   
+                /* 绝对定位 */
+                position: absolute;
+                top: 100px;
+                left: 100px;
+
+
+                 /* 透明度 0-1*/
+                 opacity: 0.5;
+            }
+         
+        </style>
+   </head>
+   <body>
+       <div class="box">
+            <div class="box2"></div>
+            <span> 脱离文档流; 不占位置</span>
+            <span> 脱离文档流; 不占位置</span>
+            <span> 脱离文档流; 不占位置</span>
+            <span> 脱离文档流; 不占位置</span>
+            <span> 脱离文档流; 不占位置</span>
+            <span> 脱离文档流; 不占位置</span>
+            <span> 脱离文档流; 不占位置</span>
+            <span> 脱离文档流; 不占位置</span>
+            <span> 脱离文档流; 不占位置</span>
+            <span> 脱离文档流; 不占位置</span>
+            <span> 脱离文档流; 不占位置</span>
+            <span> 脱离文档流; 不占位置</span>
+            <span> 脱离文档流; 不占位置</span>
+            <span> 脱离文档流; 不占位置</span>
+            <span> 脱离文档流; 不占位置</span>
+            <span> 脱离文档流; 不占位置</span>
+            <span> 脱离文档流; 不占位置</span>
+            <span> 脱离文档流; 不占位置</span>
+            <span> 脱离文档流; 不占位置</span>
+            <span> 脱离文档流; 不占位置</span>
+            <span> 脱离文档流; 不占位置</span>
+            <span> 脱离文档流; 不占位置</span>
+            <span> 脱离文档流; 不占位置</span>
+            <span> 脱离文档流; 不占位置</span>
+            <span> 脱离文档流; 不占位置</span>
+            <span> 脱离文档流; 不占位置</span>
+            <span> 脱离文档流; 不占位置</span>
+            <span> 脱离文档流; 不占位置</span>
+            <span> 脱离文档流; 不占位置</span>
+            <span> 脱离文档流; 不占位置</span>
+            <span> 脱离文档流; 不占位置</span>
+            <span> 脱离文档流; 不占位置</span>
+            <span> 脱离文档流; 不占位置</span>
+            <span> 脱离文档流; 不占位置</span>
+            <span> 脱离文档流; 不占位置</span>
+            <span> 脱离文档流; 不占位置</span>
+            <span> 脱离文档流; 不占位置</span>
+            <span> 脱离文档流; 不占位置</span>
+            <span> 脱离文档流; 不占位置</span>
+            <span> 脱离文档流; 不占位置</span>
+            <span> 脱离文档流; 不占位置</span>
+            <span> 脱离文档流; 不占位置</span>
+            <span> 脱离文档流; 不占位置</span>
+            <span> 脱离文档流; 不占位置</span>
+            <span> 脱离文档流; 不占位置</span>
+            <span> 脱离文档流; 不占位置</span>
+            <span> 脱离文档流; 不占位置</span>
+            <span> 脱离文档流; 不占位置</span>
+            <span> 脱离文档流; 不占位置</span>
+            <span> 脱离文档流; 不占位置</span>
+            <span> 脱离文档流; 不占位置</span>
+            <span> 脱离文档流; 不占位置</span>
+            <span> 脱离文档流; 不占位置</span>
+            <span> 脱离文档流; 不占位置</span>
+            <span> 脱离文档流; 不占位置</span>
+            <span> 脱离文档流; 不占位置</span>
+            <span> 脱离文档流; 不占位置</span>
+            <span> 脱离文档流; 不占位置</span>
+            <span> 脱离文档流; 不占位置</span>
+            <span> 脱离文档流; 不占位置</span>
+            <span> 脱离文档流; 不占位置</span>
+            <span> 脱离文档流; 不占位置</span>
+            <span> 脱离文档流; 不占位置</span>
+            <span> 脱离文档流; 不占位置</span>
+            <span> 脱离文档流; 不占位置</span>
+            <span> 脱离文档流; 不占位置</span>
+            <span> 脱离文档流; 不占位置</span>
+            <span> 脱离文档流; 不占位置</span>
+            <span> 脱离文档流; 不占位置</span>
+            <span> 脱离文档流; 不占位置</span>
+            <span> 脱离文档流; 不占位置</span>
+            <span> 脱离文档流; 不占位置</span>
+            <span> 脱离文档流; 不占位置</span>
+            <span> 脱离文档流; 不占位置</span>
+            <span> 脱离文档流; 不占位置</span>
+            <span> 脱离文档流; 不占位置</span>
+            <span> 脱离文档流; 不占位置</span>
+            <span> 脱离文档流; 不占位置</span>
+            <span> 脱离文档流; 不占位置</span>
+            <span> 脱离文档流; 不占位置</span>
+            <span> 脱离文档流; 不占位置</span>
+            <span> 脱离文档流; 不占位置</span>
+            <span> 脱离文档流; 不占位置</span>
+            <span> 脱离文档流; 不占位置</span>
+            <span> 脱离文档流; 不占位置</span>
+            <span> 脱离文档流; 不占位置</span>
+            <span> 脱离文档流; 不占位置</span>
+            <span> 脱离文档流; 不占位置</span>
+            
+            <span> 脱离文档流; 不占位置</span>
+            <span> 脱离文档流; 不占位置</span>
+            <span> 脱离文档流; 不占位置</span>
+            <span> 脱离文档流; 不占位置</span>
+            <span> 脱离文档流; 不占位置</span>
+            <span> 脱离文档流; 不占位置</span>
+            <span> 脱离文档流; 不占位置</span>
+            <span> 脱离文档流; 不占位置</span>
+            <span> 脱离文档流; 不占位置</span>
+            <span> 脱离文档流; 不占位置</span>
+            <span> 脱离文档流; 不占位置</span>
+            <span> 脱离文档流; 不占位置</span>
+            <span> 脱离文档流; 不占位置</span>
+            <span> 脱离文档流; 不占位置</span>
+            <span> 脱离文档流; 不占位置</span>
+            <span> 脱离文档流; 不占位置</span>
+            <span> 脱离文档流; 不占位置</span>
+            <span> 脱离文档流; 不占位置</span>
+            <span> 脱离文档流; 不占位置</span>
+            <span> 脱离文档流; 不占位置</span>
+            <span> 脱离文档流; 不占位置</span>
+            <span> 脱离文档流; 不占位置</span>
+            
+            <span> 脱离文档流; 不占位置</span>
+            <span> 脱离文档流; 不占位置</span>
+            <span> 脱离文档流; 不占位置</span>
+            <span> 脱离文档流; 不占位置</span>
+            <span> 脱离文档流; 不占位置</span>
+            <span> 脱离文档流; 不占位置</span>
+            <span> 脱离文档流; 不占位置</span>
+            <span> 脱离文档流; 不占位置</span>
+            <span> 脱离文档流; 不占位置</span>
+            <span> 脱离文档流; 不占位置</span>
+            <span> 脱离文档流; 不占位置</span>
+            <span> 脱离文档流; 不占位置</span>
+            <span> 脱离文档流; 不占位置</span>
+            <span> 脱离文档流; 不占位置</span>
+            <span> 脱离文档流; 不占位置</span>
+            <span> 脱离文档流; 不占位置</span>
+            <span> 脱离文档流; 不占位置</span>
+            <span> 脱离文档流; 不占位置</span>
+            <span> 脱离文档流; 不占位置</span>
+            <span> 脱离文档流; 不占位置</span>
+            <span> 脱离文档流; 不占位置</span>
+            <span> 脱离文档流; 不占位置</span>
+            <span> 脱离文档流; 不占位置</span>
+            <span> 脱离文档流; 不占位置</span>
+            <span> 脱离文档流; 不占位置</span>
+            <span> 脱离文档流; 不占位置</span>
+            <span> 脱离文档流; 不占位置</span>
+            <span> 脱离文档流; 不占位置</span>
+      
+       </div>
+     
+       
+   </body>
+   </html>

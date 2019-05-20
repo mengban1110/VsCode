@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>07-相对定位</title>
+    <!-- 定位 布局; top left bottom right
+        相对定位 relative  参照物自己;占位置 非常少
+        绝对定位 absolute  参照物父元素(父元素需要设置定位)
+        固定定位 fixed
+        无定位  static
+    
+    -->
+    <style>
+            .box{
+                width: 200px;
+                height: 200px;
+                background-color:red;
+                
+                /* 相对定位  relative */
+                position: relative;
+                top: 100px;
+                left: 500px;
+               
+            }
+            .box2{
+                width: 200px;
+                height: 200px;
+                background-color:green;
+   
+                /* 相对定位  relative */
+                position: relative;
+                top: 100px;
+                left: 500px;
+            }
+            .box3{
+                width: 200px;
+                height: 200px;
+                background-color:blue;
+            }
+        </style>
+   </head>
+   <body>
+       <div class="box"></div>
+       <div class="box2"></div>
+       <div class="box3"></div>
+       
+   </body>
+   </html>

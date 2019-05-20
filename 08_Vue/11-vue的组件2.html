@@ -1,0 +1,51 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>01-vue对象的生命周期</title>
+    <script src="js/vue.js"></script>
+    <style>
+        .app{
+            background: red;
+        }
+    </style>
+    <script>
+            window.onload = function () {
+
+                // vue组件传内容    Vue.component('名字(纯小写)', {'组件内容'})
+                Vue.component(
+                    'navbar',
+                    {   
+                        // props:['content'],
+                        template:'<div class="app">{{content}}</div>',
+                        data:function () {
+                            return {
+                                content:"默认内容"
+                            }
+                        }
+                    }
+                )
+                
+                var vm = new Vue({
+                    // vue组件 
+                    el:'.box'
+
+                })
+            }
+        </script>
+    </head>
+    <body>
+    
+        <div class="box">
+            <navbar></navbar>
+
+            <!-- <navbar content="黑马"></navbar> -->
+
+        </div>
+        1019197976
+        
+    </body>
+    </html>

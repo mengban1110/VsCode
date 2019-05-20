@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>06-选择器的权重</title>
+    <!-- 
+        选择器                   权重
+        标签选择器                  1
+        类选择器                   10
+        ID选择器                  100
+        行内式                    1000
+        !important               10000    提升属性的
+
+  
+        层级选择器
+        
+     -->
+     <style>
+         /* 1.标签 */
+         /* div {
+             color:red !important ;
+             font-size: 50px;
+         } */
+
+         /* 2.类选择器 */
+         /* .one {
+             color:green;
+         } */
+        
+         /* 3.ID 选择器 */
+         /* #first {
+             color:blue;
+             font-size: 10px;
+         }
+           */
+         
+         /* 层级选择器 */
+         /* 1 1 1 = 3 */
+         div div div {
+             color: red;
+         }
+         /* 10 1 10 = 21 */
+         .grangfather div .son {
+             color:green;
+         }
+         /* 100 10 1 = 111 */
+         #one .father div {
+             color: blue;
+         }
+         .grangfather #two div {
+             color:indigo
+         }
+         /* 100 100 1 = 201 */
+         #one #two div {
+             color: gold 
+          }
+     
+     </style>
+</head>
+<body>
+
+    <!-- div.grangfather#one>div.father#two>div.son#three -->
+    <div class="grangfather" id="one">
+        <div class="father" id="two">
+            <div class="son" id="three">
+                    选择器的权重
+            </div>
+        </div>
+    </div>
+
+    <!-- <div style="color:gold" class="one" id="first">
+            选择器的权重
+
+    </div> -->
+
+    <!-- list-style:none -->
+    <ul>
+        <li>文字1</li>
+        <li>文字2</li>
+        <li>文字3</li>
+    </ul>
+    <ol>
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+    </ol>
+
+    <dl>
+        <dt>表头</dt>
+        <dd>定义列表1</dd>
+        <dd>定义列表2</dd>
+        <dd>定义列表3</dd>
+    </dl>
+
+    
+    <!-- outline:none -->
+    <form action="提交的网址" method="GET">
+
+        <label for="">显示文字</label>
+
+        <input type="text" placeholder="提示">
+        <input type="password">
+        <input type="radio" name="gender">
+        <input type="checkbox">
+        <input type="file">
+        <input type="submit" value="注册">
+        <input type="reset" value="重置">
+        <input type="button" value="">
+        <button>按钮</button>
+
+        <select name="" id="">
+            <option value="" selected="selected">北京</option>
+        </select>
+
+        <textarea name="" id="" cols="30" rows="10"></textarea>
+
+
+    </form>
+    
+    
+</body>
+</html>

@@ -1,0 +1,56 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>01-vue对象的生命周期</title>
+    <script src="js/vue.js"></script>
+    <!-- 1. 导包 网络请求-->
+    <script src="../js/axios.min.js"></script>
+    <script>
+            window.onload = function () {
+                
+                var vm = new Vue({
+                    
+                    el:'.box',
+                    methods:{
+                        fnSend:function (){
+                            // 点击按钮  发送请求 数据
+                            
+                            axios({
+                                url:'http://t.weather.sojson.com/api/weather/city/101010100',
+                                method:'get'
+                            })
+                            .then(function (dat) {
+                                console.log(dat.data)
+                            })
+                            .catch(function (err) {
+                                alert(err)
+                            })
+
+                           axios.get('http://t.weather.sojson.com/api/weather/city/101010100')
+                           .then(function (dat) {
+                                console.log(dat.data)
+                            })
+                            .catch(function (err) {
+                                alert(err)
+                            })
+
+                        }
+                    }
+                })
+            }
+        </script>
+    </head>
+    <body>
+    
+        <div class="box">
+    
+            <button @click="fnSend">点击按钮 提交网络请求</button>
+    
+        </div>
+        
+    </body>
+    </html>

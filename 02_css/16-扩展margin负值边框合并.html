@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>16-扩展margin负值边框合并</title>
+
+    <style>
+        .big {
+            width: 202px;
+            height: 154px;
+
+             border:1px solid green;
+             margin: 0 auto;
+        }
+
+        .big div {
+            height: 30px;
+            background: gold;
+            border-top:1px solid green;
+        }
+
+        .big .small1{
+            
+            margin-top:-1px;
+        }
+    
+    </style>
+
+</head>
+<body>
+    <div class="big">
+        <div class="small1"></div>
+        <div class="small"></div>
+        <div class="small"></div>
+        <div class="small"></div>
+        <div class="small"></div>
+    </div>
+    
+</body>
+</html>

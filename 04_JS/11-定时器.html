@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>11-定时器</title>
+
+    <script>
+        window.onload = function () {
+
+            function fnAlert() {
+                // alert('单次执行的定时器 一次!')
+                console.log('单次执行的定时器 一次!');
+            }
+            
+            // 1.单次执行 定时器 单位 毫秒 1s=1000ms
+            // var timer = setTimeout(fnAlert,2000);
+
+            // 清除定时器
+            // clearTimeout(timer);
+
+            // 2.反复执行 Interval 间隔
+            var intervalTimer = setInterval(fnAlert,1000);
+
+            // 清除反复执行的定时器
+            clearInterval(intervalTimer);
+
+           
+           
+
+        }
+    
+    
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

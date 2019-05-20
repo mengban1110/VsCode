@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>09-js操作标签</title>
+    <style>
+        div {
+            background: red;
+            height: 50px;
+        }
+    </style>
+
+    <script>
+        console.log('1111111')
+        // 等待 浏览器加载完毕(所有标签都显示了)  再获取标签
+        window.onload = function () {
+             // 1.获取标签 ID
+             var oDiv = document.getElementById('one')
+
+            alert(oDiv)
+            console.log('33333')
+        }
+        console.log('222222')
+
+      
+    </script>
+    
+</head>
+<body>
+    <div class="box" id="one">
+
+    </div>
+   
+    
+</body>
+</html>
+

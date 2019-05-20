@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>03-表单</title>
+
+    <style>
+        .box {
+            width: 800px;
+            height: 800px;
+            border:1px solid red;
+
+            margin:0 auto;
+
+            
+        }
+        .head {
+            /* 文本居中 */
+            text-align: center;
+        }
+        
+        input {
+            /* 去掉选中的 高亮 蓝色的框 */
+            /* outline:none; */
+        }
+    </style>
+</head>
+<body>
+    <!-- 在html中 只有表单 form 可以提交数据 -->
+
+    <div class="box">
+        <div class="head">
+            <h1>个人信息登记表</h1>
+        </div>
+           <!-- form 
+            action :  提交的网址 默认提交的是当前网址 
+            method : 请求方式 默认GET  明文 不安全, 长度有限制
+                                POST 相对安全  登录 注册
+            -->
+            <form action="" method="POST">
+                    
+                    <label for="user">用户名:</label>
+                    <input id="user" type="text" name="username" placeholder="请输入用户名">
+                    <br>
+                    <br>
+                    <label for="">密&nbsp;&nbsp;&nbsp;码:</label>
+                    <input  type="password" name="pwd">
+                    <br>
+                    <br>
+                    <label for="">性&nbsp;&nbsp;&nbsp;别:</label>
+                    <input type="radio" name="gender" value="man">男
+                    <input type="radio" name="gender" value="女" id="">女
+
+                    <br>
+                    <br>
+                    <label for="">爱</label>&nbsp;&nbsp;&nbsp;好:</label>
+                    <input type="checkbox" name="like" id="">游泳
+                    <input type="checkbox" name="like" id="">健身
+                    <input type="checkbox" name="like" id="">跑步
+                    <input type="checkbox" name="like" id="">打游戏
+
+                    <br>
+                    <br>
+                    <label for="">玉</label>&nbsp;&nbsp;&nbsp;照:</label>
+                    <input type="file" name="photo" id="">
+
+                    <br>
+                    <br>
+                    <label for="">籍</label>&nbsp;&nbsp;&nbsp;贯:</label>
+                    <!-- 下拉列表 -->
+                    <select name="address" id="">
+                        <option value="0">北京</option>
+                        <option value="1">上海</option>
+                        <option value="2" selected="selected">广州</option>
+                        <option value="3">深圳</option>
+                    </select>
+
+                    <br>
+                    <br>
+                    <label for="">个人信息:</label>
+                    <!-- 文本域 -->
+                    <textarea name="info" id="" ></textarea>
+                    <br>
+                    <br>
+                    <!-- 注册按钮 -->
+                    <input type="submit" value="注册">
+                    <!-- 重置按钮 -->
+                    <input type="reset" value="重置">
+
+                    <!-- 普通按钮 -->
+                    <input type="button" value="普通按钮">
+                    <button>普通按钮</button>
+            
+            </form>
+
+    </div>
+   
+    
+</body>
+</html>

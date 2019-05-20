@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>07-选择器的转移</title>
+    <script src="./js/jquery-1.12.4.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            
+                // 1.参照物 
+                var $div = $('.third');
+
+
+                // 平级关系  上下 转移
+                    //  上转移 一个
+                    var $upDiv = $div.prev()
+                    var $upDiv = $div.prevAll()
+
+                    // 下一个 多个
+                    $upDiv = $div.next();
+                    $upDiv = $div.nextAll();
+
+                    // 除了他之外的 所有平级标签
+                    $upDiv = $div.siblings();
+
+                // 父子关系  嵌套的
+                // 通过父元素  找子元素
+                    var $childDiv = $div.children();
+                    var $childDiv = $div.children('span');
+                    // find 找子元素 必须传参
+                    var $childDiv = $div.find('p');
+
+                // 通过子元素 找父元素
+                var $son = $('p');
+                var $parentDiv = $son.parent();
+
+                $parentDiv.css({'color':'red'})
+
+        })
+    
+    </script>
+    
+</head>
+<body>
+    <div>1</div>
+    <div>2</div>
+    <div  class="third">3
+    
+        <p>子元素1</p>
+        <span>子元素2</span>
+        <a href="">子元素3</a>
+    </div>
+    <div>4</div>
+    <div>5</div>
+</body>
+</html>

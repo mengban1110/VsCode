@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>06-选择器的权重</title>
+    <!-- 06-选择器的权重
+   
+        选择器              权重
+        标签                1
+        类                  10
+        ID                  100
+        行内式              1000
+        !important         10000(提升的属性的 权重) 
+
+        层级选择器 加法
+
+
+    -->
+
+   <style>
+        .box{
+            color:green !important;
+            font-size: 50px;
+        }
+        div{
+            color:red;
+            font-size: 10px;
+        }
+        #one{
+            color:blue
+        } 
+       
+        /* 10        100   1 */
+        .grandfather #two div {
+            color: red
+        }
+        
+   </style>
+</head>
+<body>
+
+   
+
+    <!-- div.box#one -->
+    <div class="box" id="one" style="color:gold">
+            04-选择器的权重
+    </div>
+
+    <div class="grandfather" id="one">
+        <div class="father" id='two'>
+            <div class="son" id="three">
+                    04-选择器的权重
+            </div>
+        </div>
+    </div>
+    
+</body>
+</html>

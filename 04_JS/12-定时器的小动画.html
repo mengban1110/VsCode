@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>12-定时器的小动画</title>
+
+    <style>
+      .box {
+        width: 200px;
+        height: 300px;
+        margin-top: 200px;
+        background: red;
+      }
+    </style>
+    <script>
+      window.onload = function() {
+        // 1.div小方块 html css
+        // 2. 获取标签
+        var oDiv = document.getElementById("one");
+
+        // 3. 动 修改 div.style.marginLeft
+        // 动画的累加量
+        var iSpeed = 0;
+        // 方向变量
+        var iDiretion = 5;
+        function fnAnimation() {
+          iSpeed += iDiretion;
+
+          // 判断范围 800px
+          if (iSpeed > 800) {
+            iDiretion = -5;
+          }
+
+          if (iSpeed < 0) {
+            iDiretion = 5;
+          }
+
+          // 修改marginleft
+          oDiv.style.marginLeft = iSpeed + "px";
+        }
+
+        // 4.开启 反复执行定时器
+        setInterval(fnAnimation, 30);
+
+        // 5.判断范围
+      };
+    </script>
+  </head>
+  <body>
+    <div class="box" id="one"></div>
+  </body>
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>08-字符串1</title>
+
+    <script>
+        window.onload = function () {
+            
+            // 1.字符串 拼接 + 
+            var sOne = "大头儿子";
+            var sFather = "隔壁王叔叔";
+            var sResult = sOne + sFather + "是一家人嘛?"
+            
+
+            // 2.类型转换
+            //  + 字符串和数字相加  转换类型  手动转换类型
+            //  parseInt()
+            //  parseFloat()
+            var iOne = 100 ;
+            var sTwo = "10";
+            var iSum = iOne + parseInt(sTwo);
+
+            //  * - /  == 隐式转换
+            var iSum = iOne * sTwo;
+            var iSum = iOne - sTwo;
+            var iSum = iOne / sTwo;
+            
+
+            // 3.精度问题 正常现象 小数
+            var fOne = 0.1;
+            var fTwo = 0.2;
+            var fSum = fOne*100 + fTwo*100;
+            // alert(fSum/100);
+
+
+            // 4. === 全等于 先判断类型, 在判断值
+            //  == 符号 隐式转换 20=="20"成立
+            var iThree = 20;
+            var sThree = "20";
+
+            if (iThree === sThree){
+                alert('相等')
+            }else {
+                alert('不相等!')
+            }
+
+
+
+        }
+    
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

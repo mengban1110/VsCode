@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>01-margin-top塌陷</title>
+    <style>
+        .red {
+            width: 400px;
+            height: 400px;
+            background: red;
+
+            /* 1.border padding */
+            /* border:1px solid red; */
+            /* padding: 1px; */
+
+            /* 2.overflow:hidden
+            元素溢出 hidden 范围的 隐藏了
+             */
+            overflow: hidden;
+
+            /* 3.伪类选择器 */
+
+        }
+        /* 清除塌陷的名字  是约定俗称的 */
+        .clearfix:before {
+            content: "";
+            display: table;
+        }
+
+        .green {
+            height: 100px;
+            background: green;
+
+            /* 设置子元素 的 margint-top */
+            margin-top:150px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="red clearfix">
+        <div class="green"></div>
+    </div>
+    
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>17-匿名函数</title>
+
+    <script>
+        window.onload = function () {
+            // 关键字  名字 () {}
+
+            // 匿名函数 不能单独定义
+            // function () {
+
+            // }
+
+            // 1.定义一个 弹出提示框的函数
+            function fnAlert() {
+                alert('匿名函数!')
+            }
+
+            // 2.点击按钮 弹出提示框
+            var oBtn = document.getElementById('btn');
+
+            // oBtn.onclick = fnAlert;
+            oBtn.onclick = function () {
+                alert('匿名函数!')
+            }
+        }
+    
+    
+    </script>
+</head>
+<body>
+    <button id="btn">按钮</button>
+</body>
+</html>

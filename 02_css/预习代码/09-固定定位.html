@@ -1,0 +1,1185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>05-相对定位</title>
+    <!-- 定位 布局; top left bottom right
+        文档流 标准流:
+                标准 标签 两类
+                div ,p ,h1-h6 : 排成一列
+                a span,      排成一行
+                按照标准标签的布局文档 称之为标准流文档流   
+
+        相对定位 relative  参照物自己;占位置 非常少
+        绝对定位 absolute  参照物父元素(父元素需要设置定位); 脱离文档流; 不占位置
+        固定定位 fixed     参照物 是浏览器, 脱离文档流,不占位置
+        无定位  static
+    
+    -->
+    <style>
+            .box{
+                width: 200px;
+                height: 200px;
+                background-color:red;
+
+                /* 固定定位 */
+                position: fixed;
+                bottom: 10px;
+                right: 10px;
+               
+            }
+            
+            
+         
+        </style>
+   </head>
+   <body>
+       <div class="box">
+        </div>
+            <span> 脱离文档流; 不占位置</span>
+            <span> 脱离文档流; 不占位置</span>
+            <span> 脱离文档流; 不占位置</span>
+            <span> 脱离文档流; 不占位置</span>
+            <span> 脱离文档流; 不占位置</span>
+            <span> 脱离文档流; 不占位置</span>
+            <span> 脱离文档流; 不占位置</span>
+            <span> 脱离文档流; 不占位置</span>
+            <span> 脱离文档流; 不占位置</span>
+            <span> 脱离文档流; 不占位置</span>
+            <span> 脱离文档流; 不占位置</span>
+            <span> 脱离文档流; 不占位置</span>
+            <span> 脱离文档流; 不占位置</span>
+            <span> 脱离文档流; 不占位置</span>
+            <span> 脱离文档流; 不占位置</span>
+            <span> 脱离文档流; 不占位置</span>
+            <span> 脱离文档流; 不占位置</span>
+            <span> 脱离文档流; 不占位置</span>
+            <span> 脱离文档流; 不占位置</span>
+            <span> 脱离文档流; 不占位置</span>
+            <span> 脱离文档流; 不占位置</span>
+            <span> 脱离文档流; 不占位置</span>
+            <span> 脱离文档流; 不占位置</span>
+            <span> 脱离文档流; 不占位置</span>
+            <span> 脱离文档流; 不占位置</span>
+            <span> 脱离文档流; 不占位置</span>
+            <span> 脱离文档流; 不占位置</span>
+            <span> 脱离文档流; 不占位置</span>
+            <span> 脱离文档流; 不占位置</span>
+            <span> 脱离文档流; 不占位置</span>
+            <span> 脱离文档流; 不占位置</span>
+            <span> 脱离文档流; 不占位置</span>
+            <span> 脱离文档流; 不占位置</span>
+            <span> 脱离文档流; 不占位置</span>
+            <span> 脱离文档流; 不占位置</span>
+            <span> 脱离文档流; 不占位置</span>
+            <span> 脱离文档流; 不占位置</span>
+            <span> 脱离文档流; 不占位置</span>
+            <span> 脱离文档流; 不占位置</span>
+            <span> 脱离文档流; 不占位置</span>
+            <span> 脱离文档流; 不占位置</span>
+            <span> 脱离文档流; 不占位置</span>
+            <span> 脱离文档流; 不占位置</span>
+            <span> 脱离文档流; 不占位置</span>
+            <span> 脱离文档流; 不占位置</span>
+            <span> 脱离文档流; 不占位置</span>
+            <span> 脱离文档流; 不占位置</span>
+            <span> 脱离文档流; 不占位置</span>
+            <span> 脱离文档流; 不占位置</span>
+            <span> 脱离文档流; 不占位置</span>
+            <span> 脱离文档流; 不占位置</span>
+            <span> 脱离文档流; 不占位置</span>
+            <span> 脱离文档流; 不占位置</span>
+            <span> 脱离文档流; 不占位置</span>
+            <span> 脱离文档流; 不占位置</span>
+            <span> 脱离文档流; 不占位置</span>
+            <span> 脱离文档流; 不占位置</span>
+            <span> 脱离文档流; 不占位置</span>
+            <span> 脱离文档流; 不占位置</span>
+            <span> 脱离文档流; 不占位置</span>
+            <span> 脱离文档流; 不占位置</span>
+            <span> 脱离文档流; 不占位置</span>
+            <span> 脱离文档流; 不占位置</span>
+            <span> 脱离文档流; 不占位置</span>
+            <span> 脱离文档流; 不占位置</span>
+            <span> 脱离文档流; 不占位置</span>
+            <span> 脱离文档流; 不占位置</span>
+            <span> 脱离文档流; 不占位置</span>
+            <span> 脱离文档流; 不占位置</span>
+            <span> 脱离文档流; 不占位置</span>
+            <span> 脱离文档流; 不占位置</span>
+            <span> 脱离文档流; 不占位置</span>
+            <span> 脱离文档流; 不占位置</span>
+            <span> 脱离文档流; 不占位置</span>
+            <span> 脱离文档流; 不占位置</span>
+            <span> 脱离文档流; 不占位置</span>
+            <span> 脱离文档流; 不占位置</span>
+            <span> 脱离文档流; 不占位置</span>
+            <span> 脱离文档流; 不占位置</span>
+            <span> 脱离文档流; 不占位置</span>
+            <span> 脱离文档流; 不占位置</span>
+            <span> 脱离文档流; 不占位置</span>
+            <span> 脱离文档流; 不占位置</span>
+            <span> 脱离文档流; 不占位置</span>
+            <span> 脱离文档流; 不占位置</span>
+            <span> 脱离文档流; 不占位置</span>
+            <span> 脱离文档流; 不占位置</span>
+            <span> 脱离文档流; 不占位置</span>
+            
+            <span> 脱离文档流; 不占位置</span>
+            <span> 脱离文档流; 不占位置</span>
+            <span> 脱离文档流; 不占位置</span>
+            <span> 脱离文档流; 不占位置</span>
+            <span> 脱离文档流; 不占位置</span>
+            <span> 脱离文档流; 不占位置</span>
+            <span> 脱离文档流; 不占位置</span>
+            <span> 脱离文档流; 不占位置</span>
+            <span> 脱离文档流; 不占位置</span>
+            <span> 脱离文档流; 不占位置</span>
+            <span> 脱离文档流; 不占位置</span>
+            <span> 脱离文档流; 不占位置</span>
+            <span> 脱离文档流; 不占位置</span>
+            <span> 脱离文档流; 不占位置</span>
+            <span> 脱离文档流; 不占位置</span>
+            <span> 脱离文档流; 不占位置</span>
+            <span> 脱离文档流; 不占位置</span>
+            <span> 脱离文档流; 不占位置</span>
+            <span> 脱离文档流; 不占位置</span>
+            <span> 脱离文档流; 不占位置</span>
+            <span> 脱离文档流; 不占位置</span>
+            <span> 脱离文档流; 不占位置</span>
+            
+            <span> 脱离文档流; 不占位置</span>
+            <span> 脱离文档流; 不占位置</span>
+            <span> 脱离文档流; 不占位置</span>
+            <span> 脱离文档流; 不占位置</span>
+            <span> 脱离文档流; 不占位置</span>
+            <span> 脱离文档流; 不占位置</span>
+            <span> 脱离文档流; 不占位置</span>
+            <span> 脱离文档流; 不占位置</span>
+            <span> 脱离文档流; 不占位置</span>
+            <span> 脱离文档流; 不占位置</span>
+            <span> 脱离文档流; 不占位置</span>
+            <span> 脱离文档流; 不占位置</span>
+            <span> 脱离文档流; 不占位置</span>
+            <span> 脱离文档流; 不占位置</span>
+            <span> 脱离文档流; 不占位置</span>
+            <span> 脱离文档流; 不占位置</span>
+            <span> 脱离文档流; 不占位置</span>
+            <span> 脱离文档流; 不占位置</span>
+            <span> 脱离文档流; 不占位置</span>
+            <span> 脱离文档流; 不占位置</span>
+            <span> 脱离文档流; 不占位置</span>
+            <span> 脱离文档流; 不占位置</span>
+            <span> 脱离文档流; 不占位置</span>
+            <span> 脱离文档流; 不占位置</span>
+            <span> 脱离文档流; 不占位置</span>
+            <span> 脱离文档流; 不占位置</span>
+            <span> 脱离文档流; 不占位置</span>
+            <span> 脱离文档流; 不占位置</span>
+      
+      
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+       
+   </body>
+   </html>

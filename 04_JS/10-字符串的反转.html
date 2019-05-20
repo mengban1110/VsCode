@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>10-字符串的反转</title>
+
+    <script>
+      window.onload = function() {
+        var sOne = "ABCDEF";
+
+        // 1.indexOf
+        var sResult = sOne.indexOf("8");
+
+        // 2.字符串反转
+        // 数组 reverse()
+        // 字符串 转数组 split("")
+
+        // 2.1 字符串 转 数组
+        var aOne = sOne.split("");
+
+        // 2.2 数组 反转
+        var aNew = aOne.reverse();
+
+        // 2.3 数组 转换 字符串
+        var sStr = aNew.join("");
+
+        // 链式写法
+        var sResult = sOne
+          .split("")
+          .reverse()
+          .join("");
+
+        alert(sResult);
+      };
+    </script>
+  </head>
+  <body></body>
+</html>

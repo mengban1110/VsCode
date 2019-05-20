@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title></title>
+    <style>
+       .list{
+           width: 500px;
+           border: 1px solid lightgray;
+           margin: 0 auto;
+
+         
+       }
+       .list li{
+           height: 50px;
+           border-bottom: 1px  dotted lightgray;
+           line-height: 50px;
+       }
+
+
+    </style>
+    <script>
+        window.onload = function () {
+            
+            //1.获取列表
+            var oList = document.getElementById("ullist");
+
+            //2.数组的数据
+            var aDataArray = ["流浪地球","飞驰人生","疯狂的外星人","日不落酒店"];
+
+            //3.替换 赋值
+            var sStr = "";
+            for (var i = 0; i < aDataArray.length; i++) {
+                var sContent = aDataArray[i];
+
+                //拼接标签
+                sStr += "<li>" + sContent + "</li>";
+
+            }
+
+            //赋值
+            oList.innerHTML = sStr;
+
+        }
+    
+    </script>
+</head>
+<body>
+
+    <ul class="list" id="ullist">
+       
+    </ul>
+    
+</body>
+</html>

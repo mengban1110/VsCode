@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style type="text/css">
+        .talk_con{
+            width:600px;
+            height:500px;
+            border:1px solid #666;
+            margin:50px auto 0;
+            background:#f9f9f9;
+        }
+        .talk_show{
+            width:580px;
+            height:420px;
+            border:1px solid #666;
+            background:#fff;
+            margin:10px auto 0;
+            overflow:auto;
+        }
+        .talk_input{
+            width:580px;
+            margin:10px auto 0;
+        }
+        .whotalk{
+            width:80px;
+            height:30px;
+            float:left;
+            outline:none;
+        }
+        .talk_word{
+            width:420px;
+            height:26px;
+            padding:0px;
+            float:left;
+            margin-left:10px;
+            outline:none;
+            text-indent:10px;
+        }        
+        .talk_sub{
+            width:56px;
+            height:30px;
+            float:left;
+            margin-left:10px;
+        }
+        .atalk{
+           margin:10px; 
+        }
+        .atalk span{
+            display:inline-block;
+            background:#0181cc;
+            border-radius:10px;
+            color:#fff;
+            padding:5px 10px;
+        }
+        .btalk{
+            margin:10px;
+            text-align:right;
+        }
+        .btalk span{
+            display:inline-block;
+            background:#ef8201;
+            border-radius:10px;
+            color:#fff;
+            padding:5px 10px;
+        }
+    </style>
+    <script src="js/vue.js"></script>
+    <script type="text/javascript">  
+        window.onload = function () {
+
+            var vm = new Vue({
+                el:'.talk_con',
+                data:{
+                    inputConetn:"",
+                    whoVal:0,
+                    dataList:[
+                        {
+                            who:'A',
+                            content:'阿发斯蒂芬四大大师傅'
+                        },
+                        {
+                            who:'B',
+                            content:'阿发斯蒂芬四大大师傅'
+                        },
+                    ],
+                },
+                methods: {
+                    fnClick:function (){
+                        // 1.判断空
+                        if (this.inputConetn == ""){
+                            alert('输入不为空!');
+                            return;
+                        }
+                        // 2.判断 A , B 拼接内容
+                        var sNewContent = {}
+                        if (this.whoVal == 0) {//A
+                            
+                            sNewContent =  {
+                                who:'A',
+                                content:this.inputConetn
+                            }
+                        } else {//B
+                            sNewContent =  {
+                                who:'B',
+                                content:this.inputConetn
+                            }
+                        }
+                        // 3. 赋值
+                        this.dataList.push(sNewContent)
+                        // 4.清空
+                        this.inputConetn = ''
+                    }
+                },
+            })
+   }
+    </script>
+</head>
+<body>
+    <div class="talk_con">
+        <!--1.对话框-->
+        <div class="talk_show" id="words">
+                <div v-for="item in dataList" :class="item.who == 'A' ? 'atalk':'btalk'">
+                    <span>{{item.who}}说: {{item.content}}</span>
+                </div>
+
+            <!-- <div class="atalk"><span>A说：吃饭了吗？</span></div>
+            <div class="btalk"><span>B说：还没呢，你呢？</span></div> -->
+        </div>
+
+        <!--2.选择人和 输入内容和发送-->
+        <div class="talk_input">
+            <select v-model="whoVal" class="whotalk" id="who" >
+                <option value="A">A</option>
+                <option value="B">B</option>
+            </select>
+            
+            <input v-model="inputConetn" type="text" class="talk_word" id="talkwords">
+            <input @click="fnClick" type="button" value="发送" class="talk_sub" id="talksub">
+        </div>
+    </div>
+</body>
+</html>

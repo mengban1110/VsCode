@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>08-submit事件</title>
+    <script src="js/jquery-1.12.4.min.js"></script>
+    <script>
+        $(function () {
+
+            // form  可以提交数据
+            $('form').submit(function (event) {
+                alert('submit')
+
+                // 用户名 密码 
+                // 加密 字段
+                // ajax nodejs  js发送请求 自定义网络请求
+                
+                // 拦截数据提交
+                return false;
+                  // 阻止 默认事件的提交
+                // event.preventDefault();
+
+            })
+           
+            //    绑定按钮
+            // $('input[type="submit"]').submit(function () {
+            //     alert('dsafasdf');
+            // })
+        })
+    </script>
+</head>
+<body>
+    <form class="data">
+        <input type="text" name="username">
+       <!-- <input type="hidden" name="fsd"> -->
+        <input type="submit" value="提交">
+    </form>
+    
+</body>
+</html>

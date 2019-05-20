@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>11-js操作属性2</title>
+
+    <script>
+        window.onload = function () {
+            
+            // 1.获取div标签
+            var oDiv = document.getElementById('one');
+
+            // 2.设置字体大小 50px;
+            // oDiv.style.fontSize = '50px';
+
+            var sFontSize = "fontWeight";
+            var sSize = "bold";
+            
+            // 错误演示
+            // oDiv.style.sFontSize = sSize;
+
+            // 使用 [] 将字符串 转换成  系统认识的属性
+            oDiv.style[sFontSize] = sSize;
+
+
+
+        
+
+
+        }
+    
+    </script>
+</head>
+<body>
+    
+    <div class="box" id="one">
+        
+        11-js操作属性2
+
+    </div>
+</body>
+</html>

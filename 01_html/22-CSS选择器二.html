@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>22-CSS选择器二</title>
+
+    <!-- 1.伪类选择器
+        2.ID选择器
+        3.组选择器
+     -->
+
+     <style>
+         /* 1.类选择器 */
+         /* .third {
+             color:blue;
+         } */
+         
+         /* 1.ID选择器 id唯一 */
+         #three {
+             color:green;
+         }
+
+         /* 绿色 , 一个斜体 一个加粗 */
+         /* p span {
+             color:green;
+         }
+         p .seven {
+             font-style: italic;
+         }
+         p .love {
+             font-weight: bold;
+         } */
+
+         /* p span{
+             color:green
+         }
+         p strong {
+             color:green
+         } */
+
+         /* 2.组选择器  多个选择器 同样的样式 
+         strong 默认就是加粗
+         */
+         p span,p strong {
+             color:green;
+         }
+         p span {
+             font-style: italic
+         }
+
+        /* 面试题 i 和 font-style:italic 有什么区别
+         i  标签{font-style:italic} 
+         font-style  css属性
+         */
+
+         /* 3.伪类选择器 
+         鼠标悬浮的状态 hover
+         */
+
+         a:hover {
+            color:red;
+            font-size: 50px; 
+         }
+
+         /* 了解 after before */
+         a:after{
+            content: "在后面增加内容"
+         }
+
+         a:before {
+             content: "在前面加内容"
+         }
+       
+        
+     </style>
+</head>
+<body>
+
+    <a href="http://www.baidu.com">百度的链接</a>
+    <!-- p{内容}*3 -->
+    <p> <i>搜狐娱乐讯</i>  <span class="seven">7年后，</span> '
+        <b>老友大银幕上再合作</b> ，他们之间的角色关系是？杨幂和霍建华，
+        对《逆时营救》里两人的关系给出了对立又逗趣的答案霍建华：相爱相杀。
+        杨幂：<strong class="love">没有相爱，只有相杀</strong>。
+    </p>
+
+    <!-- <p>搜狐娱乐讯 <span class="seven">7年后，</span> '
+        老友大银幕上再合作，他们之间的角色关系是？杨幂和霍建华，
+        对《逆时营救》里两人的关系给出了对立又逗趣的答案霍建华：相爱相杀。
+        杨幂：<span class="love">没有相爱，只有相杀</span>。
+    </p> -->
+    <p class="third">搜狐娱乐讯 7年后，老友大银幕上再合作，他们之间的角色关系是？杨幂和霍建华，对《逆时营救》里两人的关系给出了对立又逗趣的答案霍建华：相爱相杀。杨幂：没有相爱，只有相杀。</p>
+    <p class='third' id="three">搜狐娱乐讯 7年后，老友大银幕上再合作，他们之间的角色关系是？杨幂和霍建华，对《逆时营救》里两人的关系给出了对立又逗趣的答案霍建华：相爱相杀。杨幂：没有相爱，只有相杀。</p>
+  
+</body>
+</html>

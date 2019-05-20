@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>02-数组的操作</title>
+
+    <script>
+    
+        window.onload = function () {
+            var aOne = ["A","A","A","B","C","D"]
+
+            // 1.增加 push() 在末尾增加
+            // aOne.push('F');
+
+            // 2.删除 pop() 删除末尾 不能指定下标索引
+            // aOne.pop()
+
+            // 3.改 查
+            // aOne[2] = "H";
+
+            // 4.indexOf  获取元素对应的下标, 如果有重复元素 只返回第一次的下标
+            var iIndex = aOne.indexOf('B')
+
+            // 5.求数组的长度 length 
+            var iLength = aOne.length;
+
+            // 6. 倒置  reverse()
+            // var aTwo = aOne.reverse()
+
+            // 7.拆分成字符串
+            // var sOne = aOne.join('');
+
+            // 8.在指定位置 删除 增加
+            //  1.参数 起始位置
+            //  2.参数 删除个数
+            //  3.以后  都是 增加的内容
+            // aOne.splice(1,2,"#");
+            aOne.splice(5,0,"#","1","2","3");
+
+            console.log(aOne);
+        }
+    
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

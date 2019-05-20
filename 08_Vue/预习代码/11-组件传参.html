@@ -1,0 +1,47 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>01-vue对象的生命周期</title>
+    <script src="js/vue.js"></script>
+    <script>
+            window.onload = function () {
+                Vue.component('nav-bar',{
+                    // 接收外界的传参
+                    props:['content'],
+                    template:'<div style="background: red">{{content}} {{newData}}</div>',
+                    // 组件中声明变量 data  待返回值的函数
+                    data:function () {
+                        return {
+                            newData:'---客户端',
+                         
+                        }
+                        
+                    }
+                })
+
+                var vm = new Vue({
+                    el:'.box',
+                   
+                })
+            }
+        </script>
+    </head>
+    <body>
+    
+        <div class="box">
+            <!-- 给组件传参 
+            外界 传入
+            内部 接收 props
+            -->
+            <nav-bar content="今日头条手机版"></nav-bar>
+      
+        </div>
+
+   
+        
+    </body>
+    </html>

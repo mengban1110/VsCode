@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style type="text/css">
+        .talk_con{
+            width:600px;
+            height:500px;
+            border:1px solid #666;
+            margin:50px auto 0;
+            background:#f9f9f9;
+        }
+        .talk_show{
+            width:580px;
+            height:420px;
+            border:1px solid #666;
+            background:#fff;
+            margin:10px auto 0;
+            overflow:auto;
+        }
+        .talk_input{
+            width:580px;
+            margin:10px auto 0;
+        }
+        .whotalk{
+            width:80px;
+            height:30px;
+            float:left;
+            outline:none;
+        }
+        .talk_word{
+            width:420px;
+            height:26px;
+            padding:0px;
+            float:left;
+            margin-left:10px;
+            outline:none;
+            text-indent:10px;
+        }        
+        .talk_sub{
+            width:56px;
+            height:30px;
+            float:left;
+            margin-left:10px;
+        }
+        .atalk{
+           margin:10px; 
+        }
+        .atalk span{
+            display:inline-block;
+            background:#0181cc;
+            border-radius:10px;
+            color:#fff;
+            padding:5px 10px;
+        }
+        .btalk{
+            margin:10px;
+            text-align:right;
+        }
+        .btalk span{
+            display:inline-block;
+            background:#ef8201;
+            border-radius:10px;
+            color:#fff;
+            padding:5px 10px;
+        }
+    </style>
+    <script src="js/jquery-1.12.4.min.js"></script>
+    <script>
+        $(function () {
+            
+            // 1.标签
+                // 对话框
+                var $show = $('#words');
+                // A  B
+                var $who = $('#who');
+                // 输入内容
+                var $contentInput = $('#talkwords');
+                // 发送按钮
+                var $sendBtn = $('#talksub');
+
+            // 2.监听发送的点击
+            $sendBtn.click(function () {
+                    // 3.判断输入是否为空 prop('value') .val();
+                    if ( $contentInput.val() == "") {
+                        alert('输入内容不能为空!');
+                        return;
+                    }
+                    // 4.A B  
+                    var sNewContent = ""
+                    if ($who.val() == "0") {//A
+                          // 5.拼接字符串
+                         sNewContent ='<div class="atalk"><span>A说：'
+                                        + $contentInput.val()
+                                        +'</span></div>';
+                    } else {//B
+                         // 5.拼接字符串
+                         sNewContent = '<div class="btalk"><span>B说：'
+                                        + $contentInput.val()
+                                        +'</span></div>';
+                        
+                    }
+                    
+                    // 6.赋值 html()
+                    var sOldContent =  $show.html();
+                    $show.html(sOldContent +  sNewContent);
+
+                    // 7.自动清空
+                    $contentInput.val('');
+                
+            })
+
+        
+        })
+    </script>
+  
+</head>
+<body>
+    <div class="talk_con">
+
+        <!--1.对话框-->
+        <div class="talk_show" id="words">
+            <div class="atalk"><span>A说：吃饭了吗？</span></div>
+            <div class="btalk"><span>B说：还没呢，你呢？</span></div>
+        </div>
+
+        <!--2.选择人和 输入内容和发送-->
+        <div class="talk_input">
+            <select class="whotalk" id="who">
+                <option value="0">A说：</option>
+                <option value="1">B说：</option>
+            </select>
+            <input type="text" class="talk_word" id="talkwords">
+            <input type="button" value="发送" class="talk_sub" id="talksub">
+        </div>
+    </div>
+</body>
+</html>

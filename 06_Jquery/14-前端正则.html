@@ -1,0 +1,37 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title></title>
+    <script src="js/jquery-1.12.4.min.js"></script>
+   <script>
+       $(function () {
+
+            // 1.正则对象
+            var reOne = new RegExp('a','g');
+            var reTwo = /a/;
+
+            // 2. test --> true false
+            var sStr = "123";
+            var reNum = /^\d+$/;
+            // alert(reOne.test(sStr));
+            // alert(reNum.test(sStr));
+
+
+            // 3. g  i 
+            var sOne = 'abcAnha';
+            var reThre = /a/gi;
+            var result = sOne.replace(reThre,"#");
+            alert(result);
+
+          
+       })
+   </script>
+</head>
+<body>
+   
+</body>
+</html>

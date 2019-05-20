@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>08-计算和倾听属性</title>
+    <script src="./js/vue.min.js"></script>
+    <script>
+        window.onload = function () {
+            
+            var vm  = new Vue({
+                el:'.box',
+                data:{
+                    message:"123456",
+                    counter:0
+                },
+                // 1.计算属性
+                computed: {
+                    // 带返回值的函数
+                    reverseMessage:function (){
+                        return this.message.split('').reverse().join('');
+                    }
+                },
+                methods: {
+                    fnAdd:function (){
+                        this.counter += 10
+                    }
+                },
+
+                // 2.观察属性 倾听 监听值的改变
+                watch: {
+                    counter:function (newVal,oldVal){
+
+                        console.log('新值----' + newVal);
+                        console.log('旧值----' + oldVal);
+                    }
+                },
+            })
+
+        }
+    
+    </script>
+</head>
+<body>
+    <div class="box">
+        <!-- 2.倾听  观察属性 watch 监听属性值的改变-->
+        <button @click="fnAdd">{{counter}}</button>
+
+        <!-- 1.计算属性 compute  让js和html分离-->
+        <p style="color:red">{{reverseMessage}}</p>
+
+        <!-- js和HTML 混合使用 不方便阅读 -->
+        <p>{{message.split('').reverse().join('')}}</p>
+
+    </div>
+ 
+</body>
+</html>

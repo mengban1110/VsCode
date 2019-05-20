@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>03-事件的委托delegate</title>
+    <script src="js/jquery-1.12.4.min.js"></script>
+    <script>
+        // 点谁li 谁红色
+       $(function () {
+        //    事件的委托: 利用冒泡原理; 将子元素的事件  委托给 父元素
+        //  1.减少绑定次数, 提高性能
+        // 2. 新增元素 有同类型的事件
+
+        // 1次 父元素<<<<-----子元素
+        $('.list').delegate('li','click',function () {
+
+            // this 操作的元素对象 li
+            $(this).css({'color':'red'})
+        })
+        
+     
+
+        // 5次
+        // $('.list li').click(function () {
+        //         $(this).css({'color':'red'})
+        //     })
+            var $li = '<li>' + '新增加的内容' +'</li>';
+            $('.list').html($li);
+
+
+       })
+    </script>
+</head>
+<body>
+    <ul class="list">
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+        <li>5</li>
+    </ul>
+    
+</body>
+</html>

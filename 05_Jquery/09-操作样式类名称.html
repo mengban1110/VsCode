@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>09-操作 样式 类名称</title>
+    <style>
+        .one {
+            border:20px solid red;
+        }
+        .two {
+            width: 100px;
+            height: 100px;
+            background: green;
+        }
+    
+    </style>
+    <script src="./js/jquery-1.12.4.min.js"></script>
+    <script>
+        $(function () {
+            
+            // 1.  名片 风格 class
+            var $div = $('div');
+
+            // 1.添加  样式类名称 addClass
+            // $div.addClass('two');
+            // $div.addClass('two');
+
+            
+
+            // 2.删除  removeClass
+            // $div.removeClass('one');
+
+
+            // 3.了解 切换  toggle
+            //  如果存在,就删除
+            // 如果不存在, 就添加
+            // $div.toggleClass()
+            // $div.toggleClass('two');
+
+            
+
+
+        })
+    
+    </script>
+</head>
+<body>
+    <div></div>
+
+    <!-- 
+        1.封闭函数 ()();~函数(); !函数(); 1.直接运行 匿名函数 2. 避免同名函数
+        2. jquery 封装的 js的函数库,  最广泛, 做的少 跑的快
+        3. 1.导包 2. $(function(){});  == $(document).ready()
+        4. 1.获取标签 $(css选择器) 标签[]
+           2. class bq 多个标签  过滤的问题
+          
+            has 有子元素的 哪个标签
+                $('form').has('a')
+            not 多个标签除了某个标签之外所有标签
+            eq 下标
+
+            3.转移
+            3.1 平级    prev prevAll next nextAll siblings
+            3.2 父子   parent() children()
+
+            2.修改属性
+                2.1 自带的属性 class id  name type value placehodler
+                $div.prop('value')
+                $div.val();
+
+                $div.prop({'class':'abc'})
+                $div.addClass('abc')
+
+                2.2 style="", <style></style>
+                $div.css('')
+
+
+
+            3.操作事件
+ 
+
+
+
+     -->
+</body>
+</html>

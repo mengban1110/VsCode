@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>12-标签包裹的内容</title>
+
+    <script>
+        window.onload = function () {
+            
+            // 1.获取标签
+            var oDiv = document.getElementById('one');
+
+            // 2.获取标签 包裹的内容 innerHTML
+            var sContent = oDiv.innerHTML
+
+            // 3. 写入 内容,整体替换
+            oDiv.innerHTML = '<a href="#">' + "div.box#one" + '</a>'
+
+            alert(sContent)
+        }
+    </script>
+</head>
+<body>
+    <!-- div.box#one -->
+    <div class="box" id="one">
+            12-标签包裹的内容
+           
+    </div>
+
+    <input type="text" value="输入框的内容">
+
+
+</body>
+</html>

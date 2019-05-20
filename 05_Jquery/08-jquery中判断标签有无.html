@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>08-jquery中判断标签有无</title>
+    <script src="./js/jquery-1.12.4.min.js"></script>
+    <script>
+        $(function () {
+            
+            // 判断标签有无
+            var $div = $('.box');
+
+            // length 
+            // 如果存在 返回的 标签的个数
+            // 不存在 0 
+            alert($div.length);
+
+            if($div.length == 0){//不在
+
+            }else {
+
+            }
+
+           
+
+
+        });
+    
+    </script>
+</head>
+<body>
+    <div class="box" style="background: red">fsdafsd</div>
+    <div class="box" style="background: red">fsdafsd</div>
+    <div class="box" style="background: red">fsdafsd</div>
+    <div class="box" style="background: red">fsdafsd</div>
+    <div class="box" style="background: red">fsdafsd</div>
+</body>
+</html>

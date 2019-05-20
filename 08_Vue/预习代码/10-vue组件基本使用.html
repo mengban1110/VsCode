@@ -1,0 +1,53 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>01-vue对象的生命周期</title>
+    <style>
+        .app{
+            background: lightgray;
+            line-height: 50px;
+            height: 50px;
+            font-weight: bold;
+        }
+    </style>
+    <script src="js/vue.js"></script>
+    <script>
+            window.onload = function () {
+
+                // vue组件  内部
+                // Vue.component('组件名字',{})
+                Vue.component('navbar',{
+                    template:' <div class="app">'
+                            + ' <span style="float:left">请登录注册</span>'
+                            + '<span @click="fnClick" style="float:right">手机京东</span>'
+                            + '  </div>',
+                    methods:{
+                        fnClick:function(){
+                            alert('组件的js功能')
+                        }
+                    }
+                }) 
+                
+                var vm = new Vue({
+                    el:'.box'
+                })
+                
+            }
+        </script>
+    </head>
+    <body>
+    
+      <div class="box">
+          <!-- 使用组件 -->
+        <navbar></navbar>
+          
+      </div>
+
+        
+        
+    </body>
+    </html>

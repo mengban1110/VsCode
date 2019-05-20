@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="css/main02.css" />
+
+    <script>
+      // 1.window.onload
+      window.onload = function() {
+        // 1.获取标签
+        var oInput01 = document.getElementById("input01"),
+          oInput02 = document.getElementById("input02"),
+          oInput03 = document.getElementById("input03"),
+          oInput04 = document.getElementById("input04"),
+          oInput05 = document.getElementById("input05"),
+          oInput06 = document.getElementById("input06"),
+          // 下拉列表  风格
+          oInput07 = document.getElementById("input07"),
+          // 设置按钮
+          oSetBtn = document.getElementById("setcard"),
+          // 名片
+          oCard = document.getElementById("card_wrap");
+
+        // 2.监听设置按钮 的点击 事件
+        oSetBtn.onclick = function() {
+          // 3. 判断输入是否为空
+          if (
+            (oInput01.value == "") |
+            (oInput02.value == "") |
+            (oInput03.value == "") |
+            (oInput04.value == "") |
+            (oInput05.value == "") |
+            (oInput06.value == "")
+          ) {
+            alert("所有的输入框都不能为空!");
+
+            // 不符合条件 , 下面的代码不执行
+            return;
+          }
+          // 4. 拼接内容
+          var sContent =
+            '<div class="p01">' +
+            oInput01.value +
+            "<em>" +
+            oInput02.value +
+            "</em></div>" +
+            '<div class="p02"> ' +
+            '<p class="company">' +
+            oInput03.value +
+            "</p>" +
+            "<p>手机：" +
+            oInput04.value +
+            "</p>" +
+            "<p>email：" +
+            oInput05.value +
+            "</p>" +
+            "<p>地址：" +
+            oInput06.value +
+            "</p>" +
+            "</div>";
+
+          // 5. 赋值给名片 innerHTML
+          oCard.innerHTML = sContent;
+
+          // 6. 判断风格
+          //  只要修改了名片的class属性 就可以(需要知道用户现在选中的风格几)
+          var sStyle = oInput07.value;
+
+          if (sStyle == 0) {
+            //风格一
+            oCard.className = "idcard01";
+          } else if (sStyle == 1) {
+            //风格二
+            oCard.className = "idcard02";
+          } else if (sStyle == 2) {
+            oCard.className = "idcard03";
+          }
+        };
+      };
+    </script>
+  </head>
+  <body>
+    <div class="set_con">
+      <div class="left_set">
+        <label>姓名：</label>
+        <input type="text" id="input01" />
+        <label>职位：</label>
+        <input type="text" id="input02" />
+        <label>公司名称：</label>
+        <input type="text" id="input03" />
+        <label>手机：</label>
+        <input type="text" id="input04" />
+        <label>email：</label>
+        <input type="text" id="input05" />
+        <label>地址：</label>
+        <input type="text" id="input06" />
+        <label>风格：</label>
+        <select id="input07">
+          <option value="0">风格一</option>
+          <option value="1">风格二</option>
+          <option value="2">风格三</option>
+        </select>
+        <input type="button" value="设 置" class="setbtn" id="setcard" />
+      </div>
+      <div class="right_show">
+        <div class="idcard01" id="card_wrap">
+          <div class="p01">张大山<em>产品经理</em></div>
+          <div class="p02">
+            <p class="company">银河科技信息技术有限公司</p>
+            <p>手机：1808888888</p>
+            <p>email：dasan@126.com</p>
+            <p>地址：中关村银河大厦B座2603</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

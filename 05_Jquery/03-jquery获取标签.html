@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>03-jquery获取标签 $('选择器')</title>
+    <script src="./js/jquery-1.12.4.min.js"></script>
+    <script>
+        
+        // 1.等待文档加载完毕
+        $(document).ready(function () {
+            
+            // 2.获取标签 jquery 操作选择器 $('selector');
+            // 2.1标签
+            var $div = $('div');
+
+            // 2.2 类
+            $div  = $('.third');
+
+            // 2.3 ID
+            $div = $('#one');
+
+            // 2.4组,层级
+            $div = $('div,a');
+            $div = $('div span');
+
+
+            // 2.5 新的属性选择器
+            $div = $('a[href="abc"]');
+         
+
+            // alert($div);
+            $div.css({'color':'red'})
+
+        })
+    
+    </script>
+</head>
+<body>
+    <a href="abc">链接</a>
+    <div id="one">1</div>
+    <div>2</div>
+    <div class="third">3
+
+            <span>子标签</span>
+    </div>
+    <div>4</div>
+    <div>5</div>
+
+    
+</body>
+</html>

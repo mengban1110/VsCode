@@ -1,0 +1,72 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>07-submit事件</title>
+    
+    <script src="js/jquery-1.12.4.min.js"></script>
+   <script>
+       $(function () {
+            //    submit提交事件 form
+         
+            $('form').submit(function (event) {
+                
+                alert('监听 提交事件!');
+
+                // js加密 pwd, +token + code
+                // 自定义提交 功能 ajax 
+                // 阻止 默认提交
+                // event.preventDefault(false);
+                return false;
+
+            })
+          
+       })
+   </script>
+</head>
+<body>
+    <form action="">
+        <!-- 接口文档  -->
+        <input type="text" name="user">
+        <input type="hidden" name="isVip" value="yes">
+        <br>
+        <br>
+        
+
+        <label for="">用户名:</label><input type="text" name="name">
+        <br>
+        <br>
+        <label for="">密&nbsp;&nbsp;&nbsp;码:</label><input type="text" name="pwd">
+        <br>
+        <input type="submit">
+
+
+    </form>
+
+
+        <!-- 1.特殊效果 显示和隐藏
+                fadeIn() fadeOut()
+                show() hide()
+                slideDown() slideUP()
+
+            $lis.each(function(k,m){
+                k代表下标
+                $(m)
+                $(this)
+            })
+            
+            $input.focus()
+            $input.focus(函数)
+            $input.blur(函数)
+
+            mouserenter mouseleave
+            
+
+        
+        -->
+   
+</body>
+</html>

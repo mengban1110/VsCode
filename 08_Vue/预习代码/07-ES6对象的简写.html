@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        window.onload = function () {
+            
+            // 5.0 6.0
+            var oObj = {
+                name:'李四',
+                age:18,
+                fnAlert:function(){
+                    alert('对象创建js')
+                }
+            }
+
+            var oTwo = new Object();
+            oTwo.name = "张飒";
+            oTwo.fnAlert = function(a){
+                    alert('对象创建js' + a)
+                }
+
+         
+            // 6.0 对象简写 前提条件 变量名字 必须和 属性的名字 一致
+            let name = "老王";
+            let age = 88;
+            let fnAlert = function(a){
+                    alert('对象创建js' + a)
+                }
+
+            var oThre = {
+                name,
+                age,
+                fnAlert:function(a){
+                    alert('对象创建js' + a)
+                }
+            }
+
+            oThre.fnAlert(oThre.name)
+
+
+            
+        }
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>01-vue的基本使用</title>
+   
+    <script src="js/vue.js"></script>
+    <script>
+
+        window.onload = function () {
+
+            var vm = new Vue({
+                el:'ul',
+                data:{
+                    dataList:['one','two','three'],
+                    obj:{
+                        'name':'小明',
+                        "age":18,
+                        "gender":true
+                    }
+                }
+            })
+          
+            
+        }
+    </script>
+</head>
+<body>
+   
+    <ul>
+        <!-- js对象 -->
+        <li v-for="(value,key) in obj">{{key}} ----- {{value}}</li>
+        <li v-for="value in obj"> {{value}}</li>
+
+        <li v-for="(item,index) in dataList">{{index}}------{{ item }}</li>
+        <li v-for="item in dataList"> {{ item }}</li>
+    </ul>
+</body>
+</html>

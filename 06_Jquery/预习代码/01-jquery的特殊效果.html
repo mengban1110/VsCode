@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>03-jquery的特殊效果</title>
+    <style>
+       .box{
+
+           width: 200px;
+           height: 300px;
+           background: red;
+
+           display: none;
+       }
+    </style>
+    <script src="js/jquery-1.12.4.min.js"></script>
+   <script>
+       $(function () {
+           var $div = $('.box');
+            $('.btn').click(function () {
+                
+                // 1.淡入淡出 fade
+                    // $div.fadeOut();
+                    // $div.fadeIn();
+                    $div.fadeToggle();
+
+
+
+                // 2.隐藏 显示 hide show
+                    // $div.css({'display':"block"})
+                    // $div.show();
+                    // $div.hide();
+                    // $div.toggle()
+
+
+                // 3.卷开卷起 slide
+                    // $div.slideUp();
+                    // $div.slideDown();
+                    // $div.slideToggle();
+
+
+
+            })
+       })
+   </script>
+</head>
+<body>
+    <input type="button" value="特殊效果" class="btn">
+    <div class="box"></div>   
+</body>
+</html>

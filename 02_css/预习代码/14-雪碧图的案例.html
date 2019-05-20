@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>13-雪碧图的案例</title>
+    <!-- 13-雪碧图 sprite 精灵图: 一张大图上面有n个小图标
+
+        首页 200个小图标: 200次  
+            一张大图 200个图标:  1次
+        提高性能, 提高用户体验度
+
+    -->
+
+    <style>
+        .list{
+            width: 300px;
+            margin: 0 auto;
+            border: 1px solid lightgray;
+
+            list-style: none;
+            /* background: url('./images/bg01.png') no-repeat 0px 0px; */
+        }
+
+        .list li{
+            height: 60px;
+            border-bottom: 1px dotted lightgray;
+            line-height: 60px;
+            text-indent: 45px;
+
+             background: url('./images/bg01.png') no-repeat 0px 9px;
+        }
+        .list .li2{
+          
+            /* background: url('./images/bg01.png') no-repeat 0px -71px;   */
+            background-position-y: -71px;
+        }
+        .list .li3{
+          
+          background: url('./images/bg01.png') no-repeat 0px -151px;  
+      }
+      .list .li4{
+          
+          background: url('./images/bg01.png') no-repeat 0px -231px;  
+      }
+      .list .li5{
+          
+          background: url('./images/bg01.png') no-repeat 0px -311px;  
+      }
+
+        .list li a{
+            /* #37ab40 */
+            color:#37ab40;
+            /* color: rgb(55, 171, 64); */
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ul.list>(li>a{超时空同居})*5 -->
+    <ul class="list">
+        <li><a href="#">超时空同居</a></li>
+        <li class="li2"><a href="#">妇联3</a></li>
+        <li class="li3"><a href="#">侏罗纪2</a></li>
+        <li class="li4"><a href="#">美人鱼</a></li>
+        <li class="li5"><a href="#">下水道的美人鱼</a></li>
+    </ul>
+    <img src="./images2/006.svg" alt="">
+</body>
+</html>

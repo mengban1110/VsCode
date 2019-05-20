@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="./js/vue.min.js"></script>
+    <script>
+    
+        window.onload = function () {
+            
+            var vm = new Vue({
+                el:'.app',
+                data:{
+                    message:"标签包裹的内容 ",
+                    linkData:"百度",
+                    url:'http://www.baidu.com'
+                },
+                methods: {
+                    fnAlert:function (){
+                        alert('操作事件 功能 ')
+                    }
+                },
+            })
+        }
+    </script>
+
+</head>
+<body>
+    <div class="app">
+         <!-- 3.操作事件 功能  v-on -->
+        <button v-on:click="fnAlert">操作事件功能</button>
+        <br>
+        <!-- 2.标签的属性操作 v-bind-->
+        <a v-bind:href="url">{{linkData}}</a>
+
+        <!-- 1.标签包裹的内容 -->
+        <p>{{message}}</p>
+
+    </div>
+   
+
+    
+</body>
+</html>

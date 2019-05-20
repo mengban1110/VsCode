@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>09-js读写属性</title>
+    <style>
+        .box {
+            background-color:red;
+
+        }
+        .newBox {
+            text-decoration: underline;
+        }
+    </style>
+
+    <script>
+    
+        window.onload = function () {
+            
+            // 1.点 语法
+            var oDiv = document.getElementById('one')
+            
+            // 读取属性
+            var sClass = oDiv.className
+            var sColor = oDiv.style.backgroundColor
+
+
+            // 写入属性
+            oDiv.style.fontSize = "30px";
+            oDiv.className = "newBox";
+            alert(sColor)
+        }
+    
+    </script>
+
+</head>
+<body>
+    <div style="background-color:green" id="one" class="box">
+            09-js读写属性
+    </div>
+</body>
+</html>

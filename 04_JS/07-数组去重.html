@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>07-数组去重</title>
+
+    <script>
+    
+        window.onload = function () {
+            
+            var aOne = ["A","B","B","C","D","D","E","F","F"];
+                // 下标   0   1   2   3   4   5   6   7  8
+            // indexOf   0   1   1   3   4    4   6   7  7
+
+            // 对比完毕 如果 下标== indexOf() 当前元素 是不重复 (取出来)
+
+            // 去重 
+            //  1. 开两个循环 遍历 对比, 如果重复 删除 
+            // 2. indexOf 如果元素重复 只返回 第一次的下标索引
+
+            // 1.for 遍历 
+            var aNew = [];
+            for(var i = 0; i < aOne.length; i++){
+                // 1.1获取元素
+                var data = aOne[i];
+
+                // 1.2 求 indexOf
+                var iRepeat = aOne.indexOf(data);
+
+                // 1.3 判断 下标
+                if (i == iRepeat){
+                    // 不重复的元素 取出去
+                    aNew.push(data);
+                }
+
+            }
+
+            console.log(aNew);
+
+
+            // aone = [];
+            // indexOf() 重复元素 返回 第一次的index 下标
+            // 循环下标
+
+            // 找的规律的 indexoF == i; 不重复的元素 取出来
+
+
+        }
+    
+    </script>
+</head>
+<body>
+
+    <!-- 
+        数组 
+            new Array(1,2,3); 
+            [1,2,3,4];
+
+            push()
+            splice(1,0,"新增加的内容")
+
+            pop()
+            splice(1,3)
+
+            aOne[] = ""
+
+            length
+            indexOf  重复了, 只返回第一次的下标
+
+            reverse()
+            join('')
+
+        for 
+            for(var i=0; i < 结束; i++){
+
+            }
+        局部和全局变量
+            
+            var one = '';
+
+            {
+                var two = ""
+            }
+
+
+
+     -->
+    
+</body>
+</html>

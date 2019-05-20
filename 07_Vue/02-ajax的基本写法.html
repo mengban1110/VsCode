@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>02-ajax的基本写法</title>
+    <script src="./js/jquery-1.12.4.min.js"></script>
+    <!-- json: 字典,js对象
+    1.不允许写注释
+    2.元素末尾不加逗号,
+    3. 必须双引号
+    4. 最外侧 只有一个 {} 或者 []
+    -->
+   
+    <script>        
+        $(function () {
+            $.ajax({
+                // 1.url
+                url:'./json/data.json',
+                // 2.请求方式 默认GET
+                type:'GET',
+                // 3.数据交互格式
+                dataType:'json',
+                // 4.响应成功
+                success:function (response){
+                    console.log(response)
+                },
+                // 5.请求失败
+                error:function (error) {
+                    alert('少年网络不行, 去噌隔壁老王的wifi')
+                }
+            })
+            
+        });
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

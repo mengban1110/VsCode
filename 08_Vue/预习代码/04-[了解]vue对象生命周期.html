@@ -1,0 +1,67 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>01-vue对象的生命周期</title>
+    <script src="js/vue.js"></script>
+    <script>
+            window.onload = function () {
+                
+                var vm = new Vue({
+                    el:'.box',
+                    data:{
+                        counter:0
+                    },
+                    
+                    // 1. 对象创建之前
+                    beforeCreate:function(){
+                        console.log('对象创建之前')
+                    },
+                    // 2. 对象创建之后
+                    created:function(){
+                        console.log('对象创建之后后后')
+                    },
+                    
+                    // 3.对象使用之前
+                    beforeMount:function(){
+                        console.log('对象使用之前')
+                    },
+                    // 4.对象使用之后 加载并展示数据
+                    mounted:function(){
+                        console.log('对象使用之后')
+                    },
+
+                    // 5.数据更新之前
+                    beforeUpdate:function(){
+                        console.log('数据更新之前')
+                    },
+                    // 6.数据更新之后
+                    updated:function(){
+                        console.log('数据更新之后')
+                    },
+
+                    // 7.对象 销毁之前
+                    beforeDestroy:function(){
+                        console.log('对象 销毁之前')
+                    },
+                    // 7.对象 销毁之后
+                    destroyed:function(){
+                        console.log('对象 销毁之后')
+                    }
+
+
+                })
+            }
+        </script>
+    </head>
+    <body>
+    
+        <div class="box">
+            <button @click="counter += 1">累加器: {{counter}}</button>
+        </div>
+        
+    </body>
+    </html>

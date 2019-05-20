@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>07-金字塔</title>
+
+    <style>
+    
+        .box {
+            width: 300px;
+            height: 300px;
+            border:1px solid black;
+            text-align: center;
+            margin: 0 auto;
+        }
+    </style>
+
+    <script>
+        window.onload = function () {
+            
+            var oDiv = document.getElementById('one');
+
+            // 拼接 金字塔
+            var sStr = ""
+
+            for (let index = 0; index < 10; index++) {
+                
+                for (let index2 = 0; index2 <= index; index2++) {
+                    
+                    sStr += "*"
+                }
+
+                sStr += "<br>"
+                
+            }
+
+            oDiv.innerHTML = sStr;
+        }
+        
+    
+    </script>
+</head>
+<body>
+
+    <div class="box" id="one">
+
+    </div>
+    
+</body>
+</html>

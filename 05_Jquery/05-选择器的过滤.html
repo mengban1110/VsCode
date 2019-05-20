@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>05-选择器的过滤</title>
+    <script src="./js/jquery-1.12.4.min.js"></script>
+    <script>
+    
+        $(document).ready(function () {
+            // 2.5 新的属性选择器
+            // $div = $('a[href="abc"]');
+            
+            // 1.获取标签 多个标签
+            var $divs = $('div'); //5
+
+            // 1. has 取有p标签的div
+            var $hasDiv = $divs.has('p');
+            // $hasDiv.css('color',"pink");
+            // $('p').css({'color':'red'});
+
+            // 2. not 取反, 除了这个标签之外的所有标签
+            var $notDivs = $divs.not('.third');
+            // $notDivs.css({'color':'green'});
+
+            // 3. eq 下标找标签
+            var $eqDiv = $divs.eq(4);
+            $eqDiv.css({'color':'gold'})
+
+      
+        })
+    
+    </script>
+</head>
+<body>
+    <div>1</div>
+    <div>2</div>
+    <div class="third" >3
+        <p>段落标签</p>
+    </div>
+    <div>4</div>
+    <div>5</div>
+</body>
+</html>

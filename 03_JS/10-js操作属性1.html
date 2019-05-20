@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>10-js操作属性1</title>
+
+    <style>
+        .box {
+            color: red;
+        }
+        .green {
+            color: green;
+            font-size: 30px;
+            font-style: italic;
+        }
+    </style>
+    <script>
+    
+        // 1.窗口加载完毕
+        window.onload = function () {
+            
+            // 1.2 获取标签
+            var oInput = document.getElementById('one')
+
+            // 1.3操作 读取 点语法
+            var sType = oInput.type;
+            var sValue = oInput.value;
+
+            // 类名称
+            var sClass = oInput.className;
+
+            // 读取 不到 有难度 嵌入式 style 里面的 属性
+            // var sColor = oInput.style.color;
+            // alert(sColor);
+
+
+            // 获取行内式的中的 属性 font-size 横杠 改成大写
+            var sFontSize = oInput.style.fontSize
+
+            // alert(sFontSize)
+
+            // 1.4 写入
+            oInput.style.fontSize = "10px";
+            oInput.value = '新的内容❤️';
+
+            // oInput.className = "green";
+        }
+        
+    
+    </script>
+
+</head>
+<body>
+        <input style="font-size:50px" type="text" value="普通文本里面的内容" class="box" id="one" name="user">
+</body>
+</html>

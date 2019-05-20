@@ -1,0 +1,59 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>01-vue对象的生命周期</title>
+    <script src="js/vue.js"></script>
+    <script>
+            window.onload = function () {
+                
+                var vm = new Vue({
+                    el:'.box',
+                    data:{
+                        content:'普通的文本框',
+                        gender:'man',
+                        liker:[],
+                        address:'上海'
+                    }
+                    
+                })
+            }
+        </script>
+    </head>
+    <body>
+    
+        <div class="box">
+
+        
+            <!-- 下拉列表 -->
+            <select name="" id="" v-model="address">
+                <option value="北京">北京</option>
+                <option value="上海">上海</option>
+                <option value="天津">天津</option>
+            </select>
+            <p>您的地址: {{address}}</p>
+
+            <!-- 3.多选框 -->
+            <input type="checkbox" name="like" v-model="liker" value="游泳">游泳
+            <input type="checkbox" name="like" v-model="liker" value="健身">健身
+            <input type="checkbox" name="like" v-model="liker" value="跑步">跑步
+            <input type="checkbox" name="like" v-model="liker" value="写代码">写代码
+
+            <p>您的爱好: {{liker}}</p>
+
+            <!-- 2.单选框 -->
+            <input type="radio" name="gender" id="" v-model="gender" value="man">男
+            <input type="radio" name="gender" id="" v-model="gender" value="woman">女
+            <p>您的性别是: {{gender}}</p>
+            
+            <!-- 1.普通的文本框 -->
+            <input type="text" v-model="content">
+            <p>{{content}}</p>
+    
+        </div>
+        
+    </body>
+    </html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        window.onload = function () {
+
+            // 箭头函数的写法 ES6.0
+            // 无参数
+           var fnOne = ()=>{
+
+            }
+            // 一个参数
+            var fnTwo = a => {
+
+            }
+            // 2个参数
+            var fnThree = (a,b) =>{
+
+            }
+            
+            
+            var oBtn = document.getElementById('one');
+
+            // 箭头函数的作用: 修改this的指向 将指向window 改成操作的对象
+            oBtn.onclick = function () {
+                console.log('定时器之前的this----' + this);
+
+                setTimeout( ()=>{
+                    console.log('单次执行的定时器')
+
+                    // window
+                    console.log('定时器<里面>的this----' + this);
+                },1000)
+             
+            }
+
+
+        
+        }
+    </script>
+</head>
+<body>
+
+    <button id="one">普通的按钮</button>
+    
+</body>
+</html>

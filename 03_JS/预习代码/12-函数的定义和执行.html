@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>12-函数的定义和执行</title>
+    <script>
+        window.onload = function () {
+            
+            // 1.函数定义 关键字 函数名 () {}
+            function fnTest (){
+                alert('定义函数');
+            }
+
+            // 函数的执行
+            fnTest();
+
+
+            // 2.带参数的 函数
+            function fnSum (a, b) {
+                
+                alert(a + b);
+            }
+
+            fnSum(10,20);
+
+            // 3.带返回值的函数
+            function fnReturn (a,b) {
+                return a + b
+            }
+
+            var sResult = fnReturn(1,1)
+            alert(sResult)
+        }
+    
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

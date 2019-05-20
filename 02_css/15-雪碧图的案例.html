@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>15-雪碧图的案例</title>
+    <!-- 15-雪碧图的案例
+        雪碧图 : 一张大图 上面 有n个小图
+
+        作用: 提高效率, 节省CPU
+
+    -->
+
+    <style>
+        .tb_list {
+            width: 300px;
+            margin: 0 auto;
+            list-style: none;
+
+            /* UI设计师 按照你的要求该图 */
+            /* background: url('./images/bg01.png') no-repeat 0px 0px; */
+        }
+
+        .tb_list li {
+            height: 60px;
+            border-bottom: 1px dotted red;
+            /* 垂直居中 */
+            line-height: 60px;
+            text-indent: 45px;
+
+
+            background: url('./images/bg01.png') no-repeat 0px 9px;
+        }
+
+        .tb_list .li2 {
+            /* background: url('./images/bg01.png') no-repeat 0px  */
+            background-position-y: -71px;
+        }
+         
+        .tb_list .li3 {
+            background: url('./images/bg01.png') no-repeat 0px -151px;
+        }
+    
+
+        .tb_list .li4 {
+            background: url('./images/bg01.png') no-repeat 0px -231px;
+        }
+    
+
+        .tb_list .li5 {
+            background: url('./images/bg01.png') no-repeat 0px -311px;
+        }
+    
+    </style>
+</head>
+<body>
+    <ul class="tb_list">
+        <li>流浪地球1</li>
+        <li class='li2'>流浪地球2</li>
+        <li class='li3'>流浪地球3</li>
+        <li class='li4'>流浪地球4</li>
+        <li class='li5'>流浪地球5</li>
+    </ul>
+    
+</body>
+</html>

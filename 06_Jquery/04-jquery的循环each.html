@@ -1,0 +1,58 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title></title>
+    
+    <script src="js/jquery-1.12.4.min.js"></script>
+   <script>
+     
+       $(function () {
+            // 获取标签
+            var $lis = $('.list li');
+
+            // each jquery 遍历
+            $lis.each(function (a,b) {
+                
+                // 1.下标
+                console.log(a);
+
+                // 2. js标签对象
+                console.log(b);
+                $(b).css('color','red')
+                
+                // $(this).click(function () {
+                //     $(this).css('color','red')
+                // })
+
+            })
+
+
+            // 点击 li ,文字颜色红色
+            // for(var i = 0; i < $lis.length; i++) {
+
+            //     var $jqueryLi = $lis.eq(i);
+
+            //     $jqueryLi.click(function () {
+            //         $(this).css('color','red');
+            //     })
+
+            // }
+       })
+   </script>
+</head>
+<body>
+
+    <ul class="list">
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+        <li>5</li>
+    </ul>
+   
+</body>
+</html>

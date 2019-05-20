@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>01-jquery的属性操作2</title>
+    <style>
+        .red{
+            color:red;
+        }
+    </style>
+    <script src="js/jquery-1.12.4.min.js"></script>
+    <script>
+        $(function () {
+            // style $div.css()
+
+            // 1.读取
+            var sClass = $('input').prop('class');
+            var sValue = $('input').prop('value');
+            var sVal = $('input').val();
+            
+
+            // 2.写
+            $('input').prop({"class":"red"})
+
+            // 3.标签包裹内容 js innerHTML jquery html();
+            // alert($('.box').html())
+            $('.box').html('❤️的内容')
+
+            // 4.了解 attr 自定义的属性
+            // alert($('.box').prop("renminbi")) 不可以
+            alert($('.box').attr("renminbi"))//可以
+            // alert($('.box').attr("class"))//可以
+            
+        })
+    </script>
+</head>
+<body>
+    <div class="box" renminbi="20W">
+            标签包裹内容 js innerHTML jquery html();
+    </div>
+    <input id="one" class="two" type="text" name="zhangsan" value="文本框的内容" placeholder="输入内容">
+    
+</body>
+</html>

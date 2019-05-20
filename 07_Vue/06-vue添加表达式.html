@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>06-vue添加表达式</title>
+    <style>
+        .red {
+            color:red;
+            font-size: 30px;
+        }
+        .green {
+            background: green;
+        }
+    </style>
+
+    <script src="./js/vue.min.js"></script>
+    <script>
+        window.onload = function () {
+            var vm = new Vue({
+                el:'.app',
+                data:{
+                    classType:false,
+                    counter:0,
+                    message:"ABCDEF"
+                }
+
+            })
+        }
+    </script>
+
+</head>
+<body>
+    <div class="app">
+        <!-- 3.js代码 字符串倒置 -->
+        <p>{{message.split('').reverse().join('')}}</p>
+        <!-- 2. 累加 -->
+        <button @click="counter += 1">{{counter}}</button>
+        <!-- 1.三元运算符  -->
+        <p v-bind:class="classType?'red':'green'">三元运算符 </p>
+    </div>
+</body>
+</html>

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        window.onload = function () {
+            
+            // 函数
+            // function fnOne(){
+            //     alert('无参数');
+            // }
+            // function fnTwo(a){
+            //     alert('参数' + a);
+            // }
+            // function fnThre(a,b){
+            //     return '参数' + a + b;
+            // }
+            // var fnFour = function () {
+            //     alert('abc')
+            // }
+            // fnOne();
+            // fnTwo(10);
+            // alert(fnThre(10,30));
+
+            // 箭头函数  =>
+            var fnOne =  () =>{
+                alert('无参数');
+            }
+            var fnTwo = a =>{
+                alert('参数' + a);
+            }
+            var fnThre = (a,b) =>{
+                return '参数' + a + b;
+            }
+
+            // fnOne();
+            // fnTwo(10);
+            // alert(fnThre(10,30));
+
+            // 作用: 修改this(window)的指向 vue的对象
+            var oBtn = document.getElementById('one');
+
+            oBtn.onclick = function () {
+                
+                console.log('原先this指向:' + this);
+
+                // 等一秒弹个提示框
+                setTimeout(()=> {
+                    alert('箭头函数!')
+                    console.log('嵌套this指向:' + this);
+                },1000)
+
+             
+            }
+
+
+        
+        }
+    </script>
+</head>
+<body>
+
+    <button id="one">普通的按钮</button>
+    
+</body>
+</html>

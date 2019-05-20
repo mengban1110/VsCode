@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>15-函数的定义</title>
+
+    <script>
+        window.onload = function () {
+            
+            // 1.函数定义 关键字 方法名字 () {}
+            function fnAlert() {
+                alert('函数定义');
+            }
+
+            // 2.函数的执行
+            fnAlert();
+
+            // 2.带参数的 函数
+            function fnSum (a,b){
+                alert(a + b);
+            }
+
+            // fnSum(10,100);
+
+            // 3.带返回值
+            function fnSum1(a,b,c) {
+
+                var iSum = a + b + c;
+                return iSum;
+            }
+
+            alert(fnSum1(1,1,1));
+
+        }
+
+        // javascript  编译型语言 预编译 预解析
+        // python      解释性语言
+    
+    
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

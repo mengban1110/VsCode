@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+
+    <script>
+      window.onload = function() {
+        // 1.单条件 成年人
+        var age = 21;
+        // if age > 20:
+        if (age > 20) {
+          alert("可以看电影!");
+        } else {
+          alert("看动画片!");
+        }
+
+        // 2.多条件  按照数字 判断星期几
+        var iNum = 0;
+        // if(iNum == 0){
+        //     alert('星期天')
+        // }else if(iNum == 1){
+        //     alert('星期一')
+        // }else if(iNum == 2){
+        //     alert('星期2')
+        // }else if(iNum == 3){
+        //     alert('星期3')
+        // }else if(iNum == 4){
+        //     alert('星期4')
+        // }else if(iNum == 5){
+        //     alert('星期5')
+        // }else if(iNum == 6){
+        //     alert('星期6')
+        // }else {
+        //     alert('输入有误!')
+        // }
+
+        switch (iNum) {
+          case 0:
+            console.log("星期天");
+            break;
+          case 1:
+            console.log("星期1");
+            break;
+
+          case 2:
+            console.log("星期2");
+            break;
+          case 3:
+            console.log("星期3");
+            break;
+          case 4:
+            console.log("星期4");
+            break;
+          case 5:
+            console.log("星期5");
+            break;
+          case 6:
+            console.log("星期6");
+            break;
+
+          default:
+            console.log("输入不符合要求");
+            break;
+        }
+      };
+    </script>
+  </head>
+  <body></body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>13-点击事件</title>
+
+    <script>
+    
+        window.onload = function () {
+
+            // 1.获取标签
+            var oBtn = document.getElementById('btn');
+
+            // 2.点击事件
+            oBtn.onclick = function () {
+                alert('嵌入式 监听点击事件!')
+            }
+            
+        }
+            
+            
+    </script>
+</head>
+<body>
+        <button id="btn">
+            普通按钮
+        </button>
+</body>
+</html>

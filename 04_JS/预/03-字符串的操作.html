@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>03-字符串的操作</title>
+
+    <script>
+        window.onload = function () {
+            
+            // 1.拼接  + 
+            var sOne = "hello";
+            var sTwo = " world";
+
+            var sResult = sOne + sTwo;
+
+            // 2.类型转换
+            var iOne = 2;
+            var sOne = "3";
+
+            var sResult = iOne + sOne;
+            var sResult = iOne + parseInt(sOne);
+
+
+            var fOne = 0.1;
+            var fTwo = 0.2;
+
+            var sResult = fOne*100 + fTwo*100;
+           
+            alert(sResult/100)
+
+
+            //  3. === 先判断类型 在判断值
+            var iNum = 1;
+            var sNum = "1";
+
+            if (iNum === sNum){
+                alert('类型和值都相等')
+            }else {
+                alert('不相等!')
+            }
+
+
+        }
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

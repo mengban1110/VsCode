@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>04-jquery操作css的属性</title>
+    <style>
+        input {
+            text-decoration: underline;
+        }
+
+        .one {
+            color: gold;
+        }
+    </style>
+    <script src="./js/jquery-1.12.4.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            //  1.获取标签 属性选择器
+            var $input = $('input[type="text"]');
+
+            // 2.读取属性
+            // $('div').css('fontSize')
+            var sFontSize = $input.css('font-size');
+            var sTextLine = $input.css('text-decoration')
+            alert(sTextLine)
+          
+            // 3.写入 修改
+            // $input.css('fontSize','20px')
+            $input.css({
+                'fontSize':"50px",
+                "background":"red"
+            })
+            // 2.  type id class value name  标签自带的属性
+            var sClass = $input.prop('value');
+            var sValue = $input.val();
+
+            $input.prop({
+                'class':'one'
+            })
+            alert(sClass);
+        })
+    
+    </script>
+</head>
+<body>
+    <div>.写入 修改</div>
+    <!-- type id class value name  标签自带的属性 -->
+    <input type="text" id="one" class="box" value="文本的内容">
+    
+</body>
+</html>

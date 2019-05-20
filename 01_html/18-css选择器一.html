@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>18-css选择器一</title>
+    <!-- 选择器 : 找标签的 选择标签 -->
+
+    <style>
+        /* 1.标签选择器 */
+        /* p {
+            color:red;
+        } */
+
+        /* 2. 类选择器*/
+        /* .one {
+            color:red;
+        }
+        .two {
+            color:green;
+        }
+        .three {
+            color:blue
+        } */
+
+        /* 3. 层级选择器  后代选择器   标签嵌套
+        选择器 选择器 {  }
+        */
+        div p {
+            color:red;
+        }
+        /* .box p {
+            color :green;
+        } */
+
+        /* div .paragraph {
+            color:blue;
+        } */
+
+        /* .box .paragraph {
+            color:hotpink;
+        } */
+        
+    </style>
+</head>
+<body>
+
+    <div class="box">
+        <span>子标签</span>
+        <p class="paragraph"> 段落子标签</p>
+        <div>
+            <p>孙子标签</p>
+        </div>
+    </div>
+    
+    <p class="one">段落 红色</p>
+    <p class="two">段落1 绿色</p>
+    <p class="three">段落2 蓝色</p>
+
+    <div>18-css选择器一</div>
+    <a href="#">空链接</a>
+</body>
+</html>

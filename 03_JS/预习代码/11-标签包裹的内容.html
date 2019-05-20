@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>11-标签包裹的内容</title>
+    <script>
+        window.onload = function () {
+            
+            var oDiv = document.getElementById('one')
+
+            var sContent = oDiv.innerHTML
+
+            oDiv.innerHTML = "新新新的内容❤️❤️❤️"
+            
+            alert(sContent)
+        }
+    </script>
+</head>
+<body>
+
+    <div id="one">
+        老的内容
+    </div>
+    
+</body>
+</html>

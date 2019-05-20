@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>14-匿名函数</title>
+    <script>
+        window.onload = function () {
+            
+            // 匿名函数 不能单独定义
+            // function () {
+                
+            // }
+
+            var oBtn = document.getElementById('btn')
+
+            // function fnAlert() {
+            //     alert('点击事件的功能')
+            // }
+
+            // oBtn.onclick = fnAlert
+            
+
+            oBtn.onclick = function () {
+                alert('点击事件的功能')
+            }
+
+
+        }
+    
+    </script>
+</head>
+<body>
+        <button id="btn">
+            点击事件
+        </button>
+</body>
+</html>

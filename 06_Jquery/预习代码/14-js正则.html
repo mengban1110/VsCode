@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>10-js正则</title>
+    <script>
+        
+        // 1.创建正则
+        var reOne = new RegExp('a');
+        var reTwo = /a/;
+
+        var sOne = "123";
+        
+        // test()  true  false
+        // alert(reOne.test(sOne));
+        // alert(reTwo.test(sOne));
+
+
+        // 2.纯数字
+        var reNumber = /^\d+$/;
+        // alert(reNumber.test(sOne));
+
+        // 3. g i
+        // 替换字符串
+        var sTwo = "acdfcgC";
+        var reFour = /c/gi;
+
+        // 字符串 替换
+        var sNew = sTwo.replace(reFour,"#");
+        alert(sNew);
+        
+
+    </script>   
+</head>
+<body>
+    
+</body>
+</html>

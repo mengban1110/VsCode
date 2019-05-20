@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>09-条件渲染</title>
+    <script src="./js/vue.min.js"></script>
+    <script>
+        window.onload = function () {
+            
+            var vm = new Vue({
+                el:'.box',
+                data:{
+                    age:true,
+                    number:30,
+                    isShow:false
+                }
+            })
+        }
+    
+    </script>
+</head>
+<body>
+    <div class="box">
+        <!-- v-show  显示和隐藏 -->
+        <p v-show="isShow">v-show 显示和隐藏</p>
+
+
+        <!-- 2.多条件 -->
+        <p v-if="number == 10">1.多条件 </p>
+        <p v-else-if="number == 20">2.多条件 </p>
+        <p v-else>3.多条件 </p>
+
+
+        <!-- 1.单条件  v-if 表面 显示和隐藏(删除标签)-->
+         <p v-if="age">1.单条件 v-if</p>
+        
+
+    </div>
+    
+</body>
+</html>
